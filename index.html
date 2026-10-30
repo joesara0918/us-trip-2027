@@ -107,10 +107,18 @@
     .todo-item.checked span { text-decoration: line-through; opacity: 0.55; }
     .reset-btn { background: var(--bg-paper); border: 2px solid var(--ink); border-radius: 8px; padding: 2px 8px; font-size: 11px; font-family: inherit; font-weight: 900; cursor: pointer; flex-shrink: 0; }
 
+    /* 全新加入的動畫效果 */
     @keyframes cloudFloat { 0%, 100% { transform: translateX(0px); } 50% { transform: translateX(8px); } }
     @keyframes popBounce { 0% { opacity: 0.4; transform: scale(0.96) translateY(8px); } 65% { opacity: 1; transform: scale(1.015) translateY(-2px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+    @keyframes jumpBounce { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-3px); } }
+    
     .svg-cloud { animation: cloudFloat 5s ease-in-out infinite; }
     .bounce-enter { animation: popBounce 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    
+    /* 賦予法鬥與人物散步彈跳感 */
+    .svg-dog { animation: jumpBounce 0.8s ease-in-out infinite; }
+    .svg-person { animation: jumpBounce 1.6s ease-in-out infinite; }
+
   </style>
 </head>
 <body>
@@ -142,30 +150,56 @@
         <div class="cbp-row"><strong>Travelers</strong> Chieh Lee (李杰) & Spouse (Married Couple)</div>
         <div class="cbp-row"><strong>Purpose</strong> 16-Day Chicago & Purdue Trip (Visiting Friend)</div>
         <div class="cbp-row"><strong>Occupation</strong> Administrator, Integrated Marketing Communications Dept. at Chunghwa Telecom (Taiwan)</div>
-        <div class="cbp-row"><strong>Accommodation</strong> Friend's Residence at 435 N Michigan Ave, Chicago, IL[cite: 1]</div>
-        <div class="cbp-row"><strong>Confirmed Return</strong> Feb 22, 2027 · EVA Air BR55 (ORD 00:30 ➔ TPE)[cite: 1]</div>
+        <div class="cbp-row"><strong>Accommodation</strong> Friend's Residence at 435 N Michigan Ave, Chicago, IL</div>
+        <div class="cbp-row"><strong>Confirmed Return</strong> Feb 22, 2027 · EVA Air BR55 (ORD 00:30 ➔ TPE)</div>
       </div>
     </section>
 
+    <!-- 加入你的專屬去背法鬥圖 winter.png -->
     <section class="hero-card">
       <svg class="hero-svg-wrap" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" aria-label="Chicago Road Trip Illustration">
+        <!-- 天空背景 -->
         <rect width="400" height="150" fill="#FFFCF6"/>
+        
         <g class="svg-cloud" stroke="#3E3A39" stroke-width="3" fill="#FFFFFF">
           <path d="M35 55 Q42 42 56 46 Q68 38 78 50 Q88 52 85 62 L32 62 Q26 58 35 55 Z"/>
           <path d="M235 45 Q242 32 256 36 Q268 28 278 40 Q288 42 285 52 L232 52 Q226 48 235 45 Z" transform="scale(0.8) translate(80, -10)"/>
         </g>
+        
+        <!-- 飄雪 / 星星 -->
         <circle cx="45" cy="74" r="2.5" fill="#A8D3E6"/>
         <circle cx="65" cy="78" r="2.5" fill="#A8D3E6"/>
         <circle cx="55" cy="86" r="2.5" fill="#A8D3E6"/>
-        <rect x="150" y="70" width="24" height="60" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
-        <rect x="174" y="50" width="28" height="80" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
-        <rect x="126" y="85" width="24" height="45" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
-        <line x1="188" y1="50" x2="188" y2="25" stroke="#3E3A39" stroke-width="3"/>
-        <path d="M195 130 C195 105 245 105 245 130 C245 135 225 130 220 130 C210 130 195 135 195 130 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
+        
+        <!-- 左側：芝加哥天際線 -->
+        <rect x="70" y="70" width="24" height="60" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <rect x="94" y="50" width="28" height="80" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <rect x="46" y="85" width="24" height="45" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <line x1="108" y1="50" x2="108" y2="25" stroke="#3E3A39" stroke-width="3"/>
+        <!-- 雲門 The Bean -->
+        <path d="M115 130 C115 105 165 105 165 130 C165 135 145 130 140 130 C130 130 115 135 115 130 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
+
+        <!-- 中間：牽繩 -->
+        <path d="M275 110 Q290 120 300 108" fill="none" stroke="#A8D3E6" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- 右側：散步的人物 -->
+        <g class="svg-person">
+          <line x1="250" y1="120" x2="250" y2="130" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+          <line x1="260" y1="120" x2="260" y2="130" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+          <rect x="243" y="95" width="24" height="25" rx="8" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+          <circle cx="255" cy="83" r="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+          <path d="M245 83 Q255 73 265 83" fill="none" stroke="#3E3A39" stroke-width="2"/>
+          <path d="M255 105 L265 115 L275 110" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+
+        <!-- 最右側：小法鬥真實照片 (winter.png)，保留原本的動畫 class -->
+        <image href="winter.png" x="280" y="82" width="48" height="48" class="svg-dog" preserveAspectRatio="xMidYMid meet" />
+
+        <!-- 底部草地 -->
         <rect x="0" y="130" width="400" height="20" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
       </svg>
       <div class="hero-info">
-        <h1 class="hero-title" data-i18n="heroTitle">法鬥迎新派對之旅[cite: 1]</h1>
+        <h1 class="hero-title" data-i18n="heroTitle">法鬥迎新派對之旅</h1>
         <p class="hero-subtitle" data-i18n="heroSubtitle">2027 · 02/07 (日) – 02/22 (一)｜芝加哥與普渡大學</p>
         <div class="countdown-pill" id="countdown-box"></div>
       </div>
@@ -194,7 +228,7 @@
           </div>
           <div style="text-align: right;">
             <div class="flight-time">21:00</div>
-            <div class="flight-airport" data-i18n="f1Arr">芝加哥 ORD[cite: 1]</div>
+            <div class="flight-airport" data-i18n="f1Arr">芝加哥 ORD</div>
           </div>
         </div>
         <div class="flight-tags">
@@ -213,7 +247,7 @@
         <div class="flight-route">
           <div>
             <div class="flight-time">00:30</div>
-            <div class="flight-airport" data-i18n="f3Dep">芝加哥 ORD[cite: 1]</div>
+            <div class="flight-airport" data-i18n="f3Dep">芝加哥 ORD</div>
           </div>
           <div class="flight-duration">
             <div data-i18n="f3Dur">直飛</div>
@@ -246,10 +280,10 @@
 
     <div class="hotel-card">
       <div class="hotel-header">
-        <span class="hotel-city" data-i18n="h1City">📍 朋友 Rick 的市區公寓[cite: 1]</span>
-        <span class="hotel-nights" data-i18n="h1Nights">15 晚 · 全程入住[cite: 1]</span>
+        <span class="hotel-city" data-i18n="h1City">📍 朋友 Rick 的市區公寓</span>
+        <span class="hotel-nights" data-i18n="h1Nights">15 晚 · 全程入住</span>
       </div>
-      <p class="hotel-desc" data-i18n="h1Desc">435 N Michigan Ave, Chicago, IL[cite: 1]</p>
+      <p class="hotel-desc" data-i18n="h1Desc">435 N Michigan Ave, Chicago, IL</p>
       <div class="flight-tags">
         <span class="tag bg-yellow" data-i18n="h1Tag1">無需更換飯店，免除搬行李之苦</span>
       </div>
@@ -267,7 +301,7 @@
       </div>
       <label class="todo-item"><input type="checkbox" data-id="t1"><span data-i18n="todo1">準備海關口說小抄（任職於 Chunghwa Telecom — Administrator, Integrated Marketing Communications Dept.）</span></label>
       <label class="todo-item"><input type="checkbox" data-id="t2"><span data-i18n="todo2">印出紙本回程機票與 ESTA 核准證明</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="t3"><span data-i18n="todo3">確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL[cite: 1] 以備海關詢問住宿地點</span></label>
+      <label class="todo-item"><input type="checkbox" data-id="t3"><span data-i18n="todo3">確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL 以備海關詢問住宿地點</span></label>
     </div>
 
     <div class="todo-group">
@@ -286,19 +320,19 @@
     const i18nDict = {
       zh: {
         navFlights: "航班", navItinerary: "行程", navHotels: "住宿", navPrep: "準備",
-        heroTitle: "法鬥迎新派對之旅[cite: 1]", heroSubtitle: "2027 · 02/07 (日) – 02/22 (一)｜芝加哥與普渡大學",
+        heroTitle: "法鬥迎新派對之旅", heroSubtitle: "2027 · 02/07 (日) – 02/22 (一)｜芝加哥與普渡大學",
         secFlights: "航班資訊",
         f1Head: "02/07 (日) 去程｜長榮航空", f1Dep: "桃園 TPE T2", f1Dur: "直飛", f1Sub: "跨日抵達", f1Arr: "芝加哥 ORD",
         f1Tag1: "皇璽桂冠艙 6A", f1Tag3: "隨身備妥 Mack's 耳塞＋抗噪耳機",
         f3Head: "02/22 (一) 回程｜長榮航空", f3Dep: "芝加哥 ORD", f3Dur: "直飛", f3Sub: "+1 日抵達", f3Arr: "桃園 TPE T2",
         f3Tag1: "皇璽桂冠艙 6A",
         secItinerary: "每日行程（點擊切換）", secHotels: "住宿據點",
-        h1City: "📍 朋友 Rick 的市區公寓[cite: 1]", h1Nights: "15 晚 · 全程入住[cite: 1]",
-        h1Desc: "435 N Michigan Ave, Chicago, IL[cite: 1]", h1Tag1: "無需更換飯店，免除搬行李之苦",
+        h1City: "📍 朋友 Rick 的市區公寓", h1Nights: "15 晚 · 全程入住",
+        h1Desc: "435 N Michigan Ave, Chicago, IL", h1Tag1: "無需更換飯店，免除搬行李之苦",
         secPrep: "行前待辦與打包清單", todoGroup1: "🛂 入境演練與採購任務", resetBtn: "重置勾選",
         todo1: "準備海關口說小抄（任職於 Chunghwa Telecom — Administrator, Integrated Marketing Communications Dept.）",
         todo2: "印出紙本回程機票與 ESTA 核准證明",
-        todo3: "確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL[cite: 1] 以備海關詢問住宿地點",
+        todo3: "確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL 以備海關詢問住宿地點",
         todoGroup2: "🧥 芝加哥極寒穿搭與飛行備品",
         todo6: "【極寒膠囊 -5°C~2°C】防風防水長版羽絨外套、發熱衣褲、羊毛襪、防水防滑靴、觸控手套、毛帽",
         todo8: "【長途飛行舒適包】Mack's 隔音耳塞、AirPods Pro 3 降噪耳機、保濕護唇膏與隨身保溫瓶",
@@ -306,19 +340,19 @@
       },
       en: {
         navFlights: "Flights", navItinerary: "Schedule", navHotels: "Hotels", navPrep: "Checklist",
-        heroTitle: "Frenchie Welcome Tour[cite: 1]", heroSubtitle: "Feb 7 – Feb 22, 2027 | Chicago & Purdue",
+        heroTitle: "Frenchie Welcome Tour", heroSubtitle: "Feb 7 – Feb 22, 2027 | Chicago & Purdue",
         secFlights: "Confirmed Flights",
         f1Head: "Feb 7 (Sun) Inbound | EVA Air", f1Dep: "Taipei TPE T2", f1Dur: "Non-stop", f1Sub: "Same-day Arrival", f1Arr: "Chicago ORD",
         f1Tag1: "Royal Laurel Class · Seat 6A", f1Tag3: "Arriving with Spouse",
         f3Head: "Feb 22 (Mon) Outbound Return | EVA Air", f3Dep: "Chicago ORD", f3Dur: "Non-stop", f3Sub: "Arrives +1 Day", f3Arr: "Taipei TPE T2",
         f3Tag1: "Royal Laurel Class · Seat 6A",
         secItinerary: "16-Day Daily Itinerary (Tap Day)", secHotels: "Accommodation",
-        h1City: "📍 Rick's Apartment[cite: 1]", h1Nights: "15 Nights[cite: 1]",
-        h1Desc: "435 N Michigan Ave, Chicago, IL[cite: 1]", h1Tag1: "Staying with friend",
+        h1City: "📍 Rick's Apartment", h1Nights: "15 Nights",
+        h1Desc: "435 N Michigan Ave, Chicago, IL", h1Tag1: "Staying with friend",
         secPrep: "Travel Documents & Packing Checklist", todoGroup1: "🛂 Travel Documents", resetBtn: "Reset",
         todo1: "Employment Info: Administrator, Integrated Marketing Communications Dept. at Chunghwa Telecom",
         todo2: "Printed Return E-Tickets & Approved ESTA",
-        todo3: "Address for Customs: 435 N Michigan Ave, Chicago, IL[cite: 1]",
+        todo3: "Address for Customs: 435 N Michigan Ave, Chicago, IL",
         todoGroup2: "🧥 Winter Packing",
         todo6: "[Chicago Winter Gear] Heavy down parka, thermal layers, gloves, and winter boots",
         todo8: "[In-Flight Kit] Mack's earplugs, AirPods Pro 3 noise-canceling headphones",
@@ -329,83 +363,83 @@
     const itineraryData = [
       {
         day: "D1",
-        zh: { date: "02/07 (日)", city: "抵達", route: "抵達與安頓", items: [ { time: "21:00", tag: "航班降落", tagColor: "bg-coral", must: true, title: "抵達 ORD 機場[cite: 1]", desc: "領取行李後，直接前往朋友 Rick 的市區公寓休息[cite: 1]。", mapQuery: "O'Hare International Airport" } ] },
-        en: { date: "Feb 7 (Sun)", city: "Arrival", route: "Arrival & Check-in", items: [ { time: "21:00", tag: "Arrival", tagColor: "bg-coral", must: true, title: "Arrive at ORD[cite: 1]", desc: "Head directly to the downtown apartment[cite: 1].", mapQuery: "O'Hare International Airport" } ] }
+        zh: { date: "02/07 (日)", city: "抵達", route: "抵達與安頓", items: [ { time: "21:00", tag: "航班降落", tagColor: "bg-coral", must: true, title: "抵達 ORD 機場", desc: "領取行李後，直接前往朋友 Rick 的市區公寓休息。", mapQuery: "O'Hare International Airport" } ] },
+        en: { date: "Feb 7 (Sun)", city: "Arrival", route: "Arrival & Check-in", items: [ { time: "21:00", tag: "Arrival", tagColor: "bg-coral", must: true, title: "Arrive at ORD", desc: "Head directly to the downtown apartment.", mapQuery: "O'Hare International Airport" } ] }
       },
       {
         day: "D2",
-        zh: { date: "02/08 (一)", city: "芝加哥", route: "經典地標與深盤披薩", items: [ { time: "10:00", tag: "市區漫步", tagColor: "bg-green", must: false, title: "睡到自然醒[cite: 1]", desc: "逛華麗一英里，吃經典深盤披薩（Lou Malnati's）[cite: 1]。下午去全球最大星巴克臻選烘焙工坊[cite: 1]。", mapQuery: "Lou Malnati's Pizzeria" } ] },
-        en: { date: "Feb 8 (Mon)", city: "Chicago", route: "Magnificent Mile & Deep Dish", items: [ { time: "10:00", tag: "City Walk", tagColor: "bg-green", must: false, title: "Sleep in to adjust to time zone[cite: 1]", desc: "Walk along the Magnificent Mile. Lunch at Lou Malnati's. Visit the massive Starbucks Reserve Roastery[cite: 1].", mapQuery: "Lou Malnati's Pizzeria" } ] }
+        zh: { date: "02/08 (一)", city: "芝加哥", route: "經典地標與深盤披薩", items: [ { time: "10:00", tag: "市區漫步", tagColor: "bg-green", must: false, title: "睡到自然醒", desc: "逛華麗一英里，吃經典深盤披薩（Lou Malnati's）。下午去全球最大星巴克臻選烘焙工坊。", mapQuery: "Lou Malnati's Pizzeria" } ] },
+        en: { date: "Feb 8 (Mon)", city: "Chicago", route: "Magnificent Mile & Deep Dish", items: [ { time: "10:00", tag: "City Walk", tagColor: "bg-green", must: false, title: "Sleep in to adjust to time zone", desc: "Walk along the Magnificent Mile. Lunch at Lou Malnati's. Visit the massive Starbucks Reserve Roastery.", mapQuery: "Lou Malnati's Pizzeria" } ] }
       },
       {
         day: "D3",
-        zh: { date: "02/09 (二)", city: "芝加哥", route: "千禧公園與潮流逛街", items: [ { time: "10:00", tag: "觀光", tagColor: "bg-blue", must: true, title: "千禧公園看「豆豆」[cite: 1]", desc: "搭乘建築河流巡禮船[cite: 1]。下午去 KITH 等潮流名店逛街，晚餐吃 Al's Beef 牛肉三明治[cite: 1]。", mapQuery: "Millennium Park" } ] },
-        en: { date: "Feb 9 (Tue)", city: "Chicago", route: "Classic Chicago & Streetwear", items: [ { time: "10:00", tag: "Sightseeing", tagColor: "bg-blue", must: true, title: "Millennium Park (The Bean)[cite: 1]", desc: "Chicago Architecture Center River Cruise. Browse streetwear at KITH. Dinner at Al's Beef[cite: 1].", mapQuery: "Millennium Park" } ] }
+        zh: { date: "02/09 (二)", city: "芝加哥", route: "千禧公園與潮流逛街", items: [ { time: "10:00", tag: "觀光", tagColor: "bg-blue", must: true, title: "千禧公園看「豆豆」", desc: "搭乘建築河流巡禮船。下午去 KITH 等潮流名店逛街，晚餐吃 Al's Beef 牛肉三明治。", mapQuery: "Millennium Park" } ] },
+        en: { date: "Feb 9 (Tue)", city: "Chicago", route: "Classic Chicago & Streetwear", items: [ { time: "10:00", tag: "Sightseeing", tagColor: "bg-blue", must: true, title: "Millennium Park (The Bean)", desc: "Chicago Architecture Center River Cruise. Browse streetwear at KITH. Dinner at Al's Beef.", mapQuery: "Millennium Park" } ] }
       },
       {
         day: "D4",
-        zh: { date: "02/10 (三)", city: "普渡大學", route: "【一日遊 1】普渡青春回憶線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-yellow", must: true, title: "出發前往西拉法葉[cite: 1]", desc: "校園巡禮（普渡鐘樓、工程噴泉），午餐吃校友必吃的復古漢堡店 Triple XXX Family Restaurant[cite: 1]。下午去 Prophetstown 州立公園走走散步，傍晚開車返回芝加哥市區[cite: 1]。", mapQuery: "Purdue University" } ] },
-        en: { date: "Feb 10 (Wed)", city: "Purdue", route: "Day Trip 1 - Purdue Nostalgia", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-yellow", must: true, title: "Depart for West Lafayette, Indiana[cite: 1]", desc: "Tour Purdue University, lunch at Triple XXX Family Restaurant. Afternoon hike at Prophetstown State Park. Drive back to Chicago[cite: 1].", mapQuery: "Purdue University" } ] }
+        zh: { date: "02/10 (三)", city: "普渡大學", route: "【一日遊 1】普渡青春回憶線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-yellow", must: true, title: "出發前往西拉法葉", desc: "校園巡禮（普渡鐘樓、工程噴泉），午餐吃校友必吃的復古漢堡店 Triple XXX Family Restaurant。下午去 Prophetstown 州立公園走走散步，傍晚開車返回芝加哥市區。", mapQuery: "Purdue University" } ] },
+        en: { date: "Feb 10 (Wed)", city: "Purdue", route: "Day Trip 1 - Purdue Nostalgia", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-yellow", must: true, title: "Depart for West Lafayette, Indiana", desc: "Tour Purdue University, lunch at Triple XXX Family Restaurant. Afternoon hike at Prophetstown State Park. Drive back to Chicago.", mapQuery: "Purdue University" } ] }
       },
       {
         day: "D5",
-        zh: { date: "02/11 (四)", city: "芝加哥", route: "休息與在地美食", items: [ { time: "12:00", tag: "休息", tagColor: "bg-green", must: false, title: "留在芝加哥市區放鬆[cite: 1]", desc: "昨天開車較累，今天去 West Loop 區尋覓美食，吃吃看著名的 Portillo's 芝加哥熱狗[cite: 1]。", mapQuery: "Portillo's Hot Dogs" } ] },
-        en: { date: "Feb 11 (Thu)", city: "Chicago", route: "Rest & Local Eats", items: [ { time: "12:00", tag: "Rest", tagColor: "bg-green", must: false, title: "Stay in Chicago[cite: 1]", desc: "Rest up from yesterday's drive. Grab some famous Chicago-style hot dogs at Portillo's and explore the West Loop food scene[cite: 1].", mapQuery: "Portillo's Hot Dogs" } ] }
+        zh: { date: "02/11 (四)", city: "芝加哥", route: "休息與在地美食", items: [ { time: "12:00", tag: "休息", tagColor: "bg-green", must: false, title: "留在芝加哥市區放鬆", desc: "昨天開車較累，今天去 West Loop 區尋覓美食，吃吃看著名的 Portillo's 芝加哥熱狗。", mapQuery: "Portillo's Hot Dogs" } ] },
+        en: { date: "Feb 11 (Thu)", city: "Chicago", route: "Rest & Local Eats", items: [ { time: "12:00", tag: "Rest", tagColor: "bg-green", must: false, title: "Stay in Chicago", desc: "Rest up from yesterday's drive. Grab some famous Chicago-style hot dogs at Portillo's and explore the West Loop food scene.", mapQuery: "Portillo's Hot Dogs" } ] }
       },
       {
         day: "D6",
-        zh: { date: "02/12 (五)", city: "印第安納", route: "【一日遊 2】國家公園與免稅蘋果線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-blue", must: true, title: "前往印第安納沙丘國家公園[cite: 1]", desc: "欣賞絕美的密西根湖畔與沙丘景觀[cite: 1]。下午抵達 University Park Mall 的 Apple Store 買 M4 MacBook Air，享受印第安納州 7% 的低稅率[cite: 1]。傍晚開車約 1.5 小時返回芝加哥[cite: 1]。", mapQuery: "Indiana Dunes National Park" } ] },
-        en: { date: "Feb 12 (Fri)", city: "Indiana", route: "Day Trip 2 - Indiana Dunes & Apple Store Run", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-blue", must: true, title: "Drive to Indiana Dunes National Park[cite: 1]", desc: "Enjoy views along Lake Michigan. Drive to University Park Mall to pick up M4 MacBook Air at 7% sales tax. Drive back to Chicago[cite: 1].", mapQuery: "Indiana Dunes National Park" } ] }
+        zh: { date: "02/12 (五)", city: "印第安納", route: "【一日遊 2】國家公園與免稅蘋果線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-blue", must: true, title: "前往印第安納沙丘國家公園", desc: "欣賞絕美的密西根湖畔與沙丘景觀。下午抵達 University Park Mall 的 Apple Store 買 M4 MacBook Air，享受印第安納州 7% 的低稅率。傍晚開車約 1.5 小時返回芝加哥。", mapQuery: "Indiana Dunes National Park" } ] },
+        en: { date: "Feb 12 (Fri)", city: "Indiana", route: "Day Trip 2 - Indiana Dunes & Apple Store Run", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-blue", must: true, title: "Drive to Indiana Dunes National Park", desc: "Enjoy views along Lake Michigan. Drive to University Park Mall to pick up M4 MacBook Air at 7% sales tax. Drive back to Chicago.", mapQuery: "Indiana Dunes National Park" } ] }
       },
       {
         day: "D7",
-        zh: { date: "02/13 (六)", city: "芝加哥", route: "博物館與頂級牛排", items: [ { time: "10:00", tag: "藝文", tagColor: "bg-yellow", must: false, title: "參觀菲爾德自然史博物館[cite: 1]", desc: "晚上吃頂級牛排（Bavette's Bar & Boeuf）[cite: 1]。", mapQuery: "The Field Museum" } ] },
-        en: { date: "Feb 13 (Sat)", city: "Chicago", route: "Museum Campus", items: [ { time: "10:00", tag: "Culture", tagColor: "bg-yellow", must: false, title: "Visit The Field Museum[cite: 1]", desc: "Dinner at a high-end steakhouse (Bavette's Bar & Boeuf)[cite: 1].", mapQuery: "The Field Museum" } ] }
+        zh: { date: "02/13 (六)", city: "芝加哥", route: "博物館與頂級牛排", items: [ { time: "10:00", tag: "藝文", tagColor: "bg-yellow", must: false, title: "參觀菲爾德自然史博物館", desc: "晚上吃頂級牛排（Bavette's Bar & Boeuf）。", mapQuery: "The Field Museum" } ] },
+        en: { date: "Feb 13 (Sat)", city: "Chicago", route: "Museum Campus", items: [ { time: "10:00", tag: "Culture", tagColor: "bg-yellow", must: false, title: "Visit The Field Museum", desc: "Dinner at a high-end steakhouse (Bavette's Bar & Boeuf).", mapQuery: "The Field Museum" } ] }
       },
       {
         day: "D8",
-        zh: { date: "02/14 (日)", city: "芝加哥", route: "文青區探險", items: [ { time: "11:00", tag: "逛街", tagColor: "bg-green", must: false, title: "去 Wicker Park 區逛古著店[cite: 1]", desc: "喝在地咖啡（Stan's Donuts）[cite: 1]。", mapQuery: "Wicker Park" } ] },
-        en: { date: "Feb 14 (Sun)", city: "Chicago", route: "Wicker Park", items: [ { time: "11:00", tag: "Shopping", tagColor: "bg-green", must: false, title: "Explore Wicker Park[cite: 1]", desc: "Shop for vintage clothes and get local coffee (Stan's Donuts)[cite: 1].", mapQuery: "Wicker Park" } ] }
+        zh: { date: "02/14 (日)", city: "芝加哥", route: "文青區探險", items: [ { time: "11:00", tag: "逛街", tagColor: "bg-green", must: false, title: "去 Wicker Park 區逛古著店", desc: "喝在地咖啡（Stan's Donuts）。", mapQuery: "Wicker Park" } ] },
+        en: { date: "Feb 14 (Sun)", city: "Chicago", route: "Wicker Park", items: [ { time: "11:00", tag: "Shopping", tagColor: "bg-green", must: false, title: "Explore Wicker Park", desc: "Shop for vintage clothes and get local coffee (Stan's Donuts).", mapQuery: "Wicker Park" } ] }
       },
       {
         day: "D9",
-        zh: { date: "02/15 (一)", city: "芝加哥", route: "【任務】幼犬物資大採購", items: [ { time: "14:00", tag: "採購", tagColor: "bg-coral", must: true, title: "開車去大型寵物店 (PetSmart/Petco)[cite: 1]", desc: "買齊尿布墊、小睡床、玩具[cite: 1]。去 Target 買「Welcome Home」的派對掛布和氣球[cite: 1]。", mapQuery: "PetSmart" } ] },
-        en: { date: "Feb 15 (Mon)", city: "Chicago", route: "Operation Frenchie Supply Run", items: [ { time: "14:00", tag: "Shopping", tagColor: "bg-coral", must: true, title: "Hit up PetSmart/Petco[cite: 1]", desc: "Buy pee pads, dog bed, chew toys. Stop by Target for Welcome Home party banners[cite: 1].", mapQuery: "PetSmart" } ] }
+        zh: { date: "02/15 (一)", city: "芝加哥", route: "【任務】幼犬物資大採購", items: [ { time: "14:00", tag: "採購", tagColor: "bg-coral", must: true, title: "開車去大型寵物店 (PetSmart/Petco)", desc: "買齊尿布墊、小睡床、玩具。去 Target 買「Welcome Home」的派對掛布和氣球。", mapQuery: "PetSmart" } ] },
+        en: { date: "Feb 15 (Mon)", city: "Chicago", route: "Operation Frenchie Supply Run", items: [ { time: "14:00", tag: "Shopping", tagColor: "bg-coral", must: true, title: "Hit up PetSmart/Petco", desc: "Buy pee pads, dog bed, chew toys. Stop by Target for Welcome Home party banners.", mapQuery: "PetSmart" } ] }
       },
       {
         day: "D10",
-        zh: { date: "02/16 (二)", city: "芝加哥", route: "【任務】居家防護與派對佈置", items: [ { time: "13:00", tag: "準備", tagColor: "bg-blue", must: false, title: "幫朋友把公寓做防狗測試[cite: 1]", desc: "收好電線、架設圍欄，佈置客廳[cite: 1]。買幾桶芝加哥特產 Garrett 爆米花當明天派對的點心[cite: 1]。", mapQuery: "Garrett Popcorn Shops" } ] },
-        en: { date: "Feb 16 (Tue)", city: "Chicago", route: "Puppy-Proofing the Apartment", items: [ { time: "13:00", tag: "Prep", tagColor: "bg-blue", must: false, title: "Secure the apartment[cite: 1]", desc: "Hide cables, set up playpen, decorate the living room. Buy Garrett Popcorn for human snacks[cite: 1].", mapQuery: "Garrett Popcorn Shops" } ] }
+        zh: { date: "02/16 (二)", city: "芝加哥", route: "【任務】居家防護與派對佈置", items: [ { time: "13:00", tag: "準備", tagColor: "bg-blue", must: false, title: "幫朋友把公寓做防狗測試", desc: "收好電線、架設圍欄，佈置客廳。買幾桶芝加哥特產 Garrett 爆米花當明天派對的點心。", mapQuery: "Garrett Popcorn Shops" } ] },
+        en: { date: "Feb 16 (Tue)", city: "Chicago", route: "Puppy-Proofing the Apartment", items: [ { time: "13:00", tag: "Prep", tagColor: "bg-blue", must: false, title: "Secure the apartment", desc: "Hide cables, set up playpen, decorate the living room. Buy Garrett Popcorn for human snacks.", mapQuery: "Garrett Popcorn Shops" } ] }
       },
       {
         day: "D11",
-        zh: { date: "02/17 (三)", city: "芝加哥", route: "重頭戲！小法鬥回家", items: [ { time: "10:00", tag: "重頭戲", tagColor: "bg-yellow", must: true, title: "迎接小法鬥！[cite: 1]", desc: "在公寓舉辦溫馨迎新派對，幫這呆萌小狗拍爆照片和短影音[cite: 1]。", mapQuery: "Magnificent Mile" } ] },
-        en: { date: "Feb 17 (Wed)", city: "Chicago", route: "THE BIG DAY (Puppy Arrives!)", items: [ { time: "10:00", tag: "Event", tagColor: "bg-yellow", must: true, title: "Pick up the French Bulldog![cite: 1]", desc: "Host a welcome party at the apartment. Take lots of photos and videos[cite: 1].", mapQuery: "Magnificent Mile" } ] }
+        zh: { date: "02/17 (三)", city: "芝加哥", route: "重頭戲！小法鬥回家", items: [ { time: "10:00", tag: "重頭戲", tagColor: "bg-yellow", must: true, title: "迎接小法鬥！", desc: "在公寓舉辦溫馨迎新派驚，幫這呆萌小狗拍爆照片和短影音。", mapQuery: "Magnificent Mile" } ] },
+        en: { date: "Feb 17 (Wed)", city: "Chicago", route: "THE BIG DAY (Puppy Arrives!)", items: [ { time: "10:00", tag: "Event", tagColor: "bg-yellow", must: true, title: "Pick up the French Bulldog!", desc: "Host a welcome party at the apartment. Take lots of photos and videos.", mapQuery: "Magnificent Mile" } ] }
       },
       {
         day: "D12",
-        zh: { date: "02/18 (四)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
-        en: { date: "Feb 18 (Thu)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
+        zh: { date: "02/18 (四)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 18 (Thu)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax.", mapQuery: "Chicago" } ] }
       },
       {
         day: "D13",
-        zh: { date: "02/19 (五)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
-        en: { date: "Feb 19 (Fri)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
+        zh: { date: "02/19 (五)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 19 (Fri)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax.", mapQuery: "Chicago" } ] }
       },
       {
         day: "D14",
-        zh: { date: "02/20 (六)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
-        en: { date: "Feb 20 (Sat)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
+        zh: { date: "02/20 (六)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 20 (Sat)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax.", mapQuery: "Chicago" } ] }
       },
       {
         day: "D15",
-        zh: { date: "02/21 (日)", city: "芝加哥", route: "最後採購與準備登機", items: [ { time: "15:00", tag: "採購", tagColor: "bg-coral", must: false, title: "去 Trader Joe's 買特色零食回台灣當伴手禮[cite: 1]", desc: "完成行李打包，深夜前往 ORD 機場[cite: 1]。", mapQuery: "Trader Joe's" } ] },
-        en: { date: "Feb 21 (Sun)", city: "Chicago", route: "Final Packing & Departure", items: [ { time: "15:00", tag: "Shopping", tagColor: "bg-coral", must: false, title: "Last-minute souvenir shopping at Trader Joe's[cite: 1]", desc: "Final packing. Head to ORD airport late at night[cite: 1].", mapQuery: "Trader Joe's" } ] }
+        zh: { date: "02/21 (日)", city: "芝加哥", route: "最後採購與準備登機", items: [ { time: "15:00", tag: "採購", tagColor: "bg-coral", must: false, title: "去 Trader Joe's 買特色零食回台灣當伴手禮", desc: "完成行李打包，深夜前往 ORD 機場。", mapQuery: "Trader Joe's" } ] },
+        en: { date: "Feb 21 (Sun)", city: "Chicago", route: "Final Packing & Departure", items: [ { time: "15:00", tag: "Shopping", tagColor: "bg-coral", must: false, title: "Last-minute souvenir shopping at Trader Joe's", desc: "Final packing. Head to ORD airport late at night.", mapQuery: "Trader Joe's" } ] }
       },
       {
         day: "D16",
-        zh: { date: "02/22 (一)", city: "返程", route: "滿載而歸", items: [ { time: "00:30", tag: "航班起飛", tagColor: "bg-blue", must: true, title: "凌晨 00:30 搭乘 BR55 班機起飛回台[cite: 1]", desc: "結束充滿回憶的旅程。", mapQuery: "Taoyuan International Airport" } ] },
-        en: { date: "Feb 22 (Mon)", city: "Flight Home", route: "Flight Home", items: [ { time: "00:30", tag: "Departure", tagColor: "bg-blue", must: true, title: "Depart ORD at 00:30 via BR55[cite: 1]", desc: "Have a safe flight home.", mapQuery: "Taoyuan International Airport" } ] }
+        zh: { date: "02/22 (一)", city: "返程", route: "滿載而歸", items: [ { time: "00:30", tag: "航班起飛", tagColor: "bg-blue", must: true, title: "凌晨 00:30 搭乘 BR55 班機起飛回台", desc: "結束充滿回憶的旅程。", mapQuery: "Taoyuan International Airport" } ] },
+        en: { date: "Feb 22 (Mon)", city: "Flight Home", route: "Flight Home", items: [ { time: "00:30", tag: "Departure", tagColor: "bg-blue", must: true, title: "Depart ORD at 00:30 via BR55", desc: "Have a safe flight home.", mapQuery: "Taoyuan International Airport" } ] }
       }
     ];
 
