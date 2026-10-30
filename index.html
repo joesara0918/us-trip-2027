@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>美中南跨州公路之旅 16 天｜2027.02</title>
-  <!-- 載入支援繁體中文的 Open 粉圓體 (jf-openhuninn) + 備援圓體 -->
+  <title>法鬥迎新派對之旅｜2027.02</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jf-openhuninn-2.0@2.0.1/webfont/jf-openhuninn-2.0.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,634 +25,96 @@
       --shadow: 0 4px 0 var(--ink);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg-paper);
-      color: var(--ink);
-      font-family: 'jf-openhuninn-2.0', 'Zen Maru Gothic', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
-
-    .app-container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    /* 頂端固定導覽列 */
-    header.top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: var(--bg-paper);
-      border-bottom: var(--border);
-      padding: 10px 12px;
-    }
-
-    .nav-inner {
-      max-width: 480px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-    }
-
-    /* 左上角雙語切換按鈕區 */
-    .brand-group {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-    }
-
-    .lang-toggle-btn {
-      background: var(--coral);
-      color: var(--ink);
-      border: var(--border);
-      border-radius: 10px;
-      padding: 6px 10px;
-      font-family: inherit;
-      font-weight: 900;
-      font-size: 13px;
-      cursor: pointer;
-      box-shadow: 0 2px 0 var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      transition: transform 0.1s ease, background-color 0.2s ease;
-    }
-
-    .lang-toggle-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 0 0 var(--ink);
-    }
-
-    .lang-toggle-btn.en-mode {
-      background: var(--green);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 4px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 13px;
-      padding: 5px 9px;
-      border-radius: var(--radius-sm);
-      border: 2px solid transparent;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-links a.active {
-      background-color: var(--yellow);
-      border: 2px solid var(--ink);
-    }
-
-    /* 海關專用摘要卡 (切換英文時自動顯示) */
-    .cbp-card {
-      display: none;
-      margin-top: 16px;
-      background: #FFF9E6;
-      border: var(--border);
-      border-radius: var(--radius-lg);
-      padding: 14px 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .cbp-card.show {
-      display: block;
-    }
-
-    .cbp-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 900;
-      font-size: 15px;
-      padding-bottom: 8px;
-      margin-bottom: 10px;
-      border-bottom: 2px dashed var(--ink);
-    }
-
-    .cbp-badge {
-      background: var(--green);
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-sm);
-      padding: 2px 8px;
-      font-size: 11px;
-    }
-
-    .cbp-grid {
-      font-size: 13px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .cbp-row strong {
-      font-weight: 900;
-      background: var(--yellow);
-      padding: 1px 5px;
-      border-radius: 4px;
-      border: 1.5px solid var(--ink);
-      margin-right: 4px;
-      font-size: 11.5px;
-    }
-
-    /* 首頁主視覺區 */
-    .hero-card {
-      margin-top: 18px;
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-svg-wrap {
-      width: 100%;
-      display: block;
-      background: var(--bg-paper);
-      border-bottom: var(--border);
-    }
-
-    .hero-info {
-      padding: 20px 16px 24px;
-      text-align: center;
-      background: var(--bg-paper);
-    }
-
-    .hero-title {
-      font-size: 25px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    .hero-subtitle {
-      font-size: 13.5px;
-      font-weight: 700;
-      opacity: 0.85;
-      margin-bottom: 14px;
-    }
-
-    .countdown-pill {
-      display: inline-block;
-      background: var(--yellow);
-      border: var(--border);
-      border-radius: var(--radius-sm);
-      padding: 6px 22px;
-      font-size: 15px;
-      font-weight: 900;
-      box-shadow: 0 3px 0 var(--ink);
-      transform: rotate(-1.5deg);
-    }
-
-    .countdown-pill span {
-      font-size: 21px;
-      margin: 0 4px;
-    }
-
-    /* 區塊標題 */
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 32px 0 14px;
-      scroll-margin-top: 72px;
-    }
-
-    .section-icon {
-      width: 34px;
-      height: 34px;
-      border: var(--border);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      font-size: 19px;
-      font-weight: 900;
-      letter-spacing: 0.5px;
-    }
-
-    /* 航班卡片 */
-    .flight-card {
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .flight-head {
-      padding: 10px 16px;
-      border-bottom: var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-weight: 900;
-      font-size: 13.5px;
-    }
-
-    .flight-body {
-      padding: 16px;
-    }
-
-    .flight-route {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 12px;
-    }
-
-    .flight-time {
-      font-size: 25px;
-      font-weight: 900;
-      line-height: 1.1;
-    }
-
-    .flight-airport {
-      font-size: 12.5px;
-      font-weight: 700;
-      margin-top: 4px;
-    }
-
-    .flight-duration {
-      flex: 1;
-      text-align: center;
-      padding: 0 10px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .flight-line {
-      border-top: 3px dotted var(--ink);
-      margin-bottom: 4px;
-    }
-
-    .flight-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding-top: 10px;
-      border-top: 2px dashed #E0DCD5;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .tag {
-      padding: 3px 10px;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-sm);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .bg-blue { background-color: var(--blue); }
-    .bg-coral { background-color: var(--coral); }
-    .bg-yellow { background-color: var(--yellow); }
-    .bg-green { background-color: var(--green); }
-    .bg-paper { background-color: var(--bg-paper); }
-
-    /* 日期切換膠囊列 */
-    .day-tabs-wrap {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding: 4px 2px 12px;
-      margin-bottom: 12px;
-      scrollbar-width: none;
-    }
-
-    .day-tabs-wrap::-webkit-scrollbar {
-      display: none;
-    }
-
-    .day-tab {
-      flex-shrink: 0;
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-md);
-      padding: 8px 14px;
-      cursor: pointer;
-      text-align: center;
-      font-family: inherit;
-      color: var(--ink);
-      box-shadow: 0 3px 0 var(--ink);
-      transition: transform 0.15s ease, background-color 0.15s ease;
-    }
-
-    .day-tab .d-num {
-      font-size: 15px;
-      font-weight: 900;
-      display: block;
-    }
-
-    .day-tab .d-city {
-      font-size: 11px;
-      font-weight: 700;
-      opacity: 0.85;
-    }
-
-    .day-tab.active {
-      background: var(--coral);
-      transform: translateY(2px);
-      box-shadow: 0 1px 0 var(--ink);
-    }
-
-    /* 每日行程卡片與時間軸 */
-    .day-summary-banner {
-      background: var(--yellow);
-      border: var(--border);
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-weight: 900;
-      font-size: 13.5px;
-      box-shadow: 0 3px 0 var(--ink);
-    }
-
-    .timeline-list {
-      position: relative;
-      padding-left: 22px;
-    }
-
-    .timeline-list::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 12px;
-      bottom: 12px;
-      width: 3px;
-      background: var(--ink);
-    }
-
-    .timeline-item {
-      position: relative;
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-md);
-      padding: 14px;
-      margin-bottom: 14px;
-      box-shadow: 0 3px 0 var(--ink);
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -23px;
-      top: 18px;
-      width: 13px;
-      height: 13px;
-      background: var(--yellow);
-      border: var(--border);
-      border-radius: 50%;
-    }
-
-    .tl-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-    }
-
-    .tl-time {
-      font-weight: 900;
-      font-size: 14px;
-      background: var(--bg-paper);
-      padding: 2px 8px;
-      border: 2px solid var(--ink);
-      border-radius: 8px;
-    }
-
-    .tl-badges {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      font-size: 11px;
-      font-weight: 900;
-      padding: 2px 8px;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-sm);
-    }
-
-    .badge-must {
-      background: var(--coral);
-    }
-
-    .tl-title {
-      font-size: 16px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-
-    .tl-desc {
-      font-size: 13.5px;
-      margin-bottom: 8px;
-    }
-
-    .map-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12px;
-      font-weight: 900;
-      color: var(--ink);
-      background: var(--bg-paper);
-      border: 2px solid var(--ink);
-      border-radius: 8px;
-      padding: 4px 10px;
-      text-decoration: none;
-    }
-
-    /* 住宿卡片 */
-    .hotel-card {
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-md);
-      padding: 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 3px 0 var(--ink);
-    }
-
-    .hotel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .hotel-city {
-      font-weight: 900;
-      font-size: 15.5px;
-    }
-
-    .hotel-nights {
-      font-size: 11.5px;
-      font-weight: 900;
-      padding: 2px 10px;
-      border: 2px solid var(--ink);
-      border-radius: var(--radius-sm);
-      background: var(--green);
-    }
-
-    .hotel-desc {
-      font-size: 13.5px;
-      margin-bottom: 8px;
-    }
-
-    /* 待辦清單 */
-    .todo-group {
-      background: var(--card-white);
-      border: var(--border);
-      border-radius: var(--radius-lg);
-      padding: 16px;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow);
-    }
-
-    .todo-group-title {
-      font-size: 15.5px;
-      font-weight: 900;
-      padding-bottom: 8px;
-      margin-bottom: 10px;
-      border-bottom: 2px dashed var(--ink);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .todo-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 8px 4px;
-      cursor: pointer;
-      font-size: 13.5px;
-      font-weight: 700;
-      user-select: none;
-    }
-
-    .todo-item input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 22px;
-      height: 22px;
-      border: var(--border);
-      border-radius: 6px;
-      background: var(--bg-paper);
-      cursor: pointer;
-      flex-shrink: 0;
-      margin-top: 2px;
-      position: relative;
-    }
-
-    .todo-item input[type="checkbox"]:checked {
-      background: var(--green);
-    }
-
-    .todo-item input[type="checkbox"]:checked::after {
-      content: '✓';
-      position: absolute;
-      left: 3px;
-      top: -3px;
-      font-size: 16px;
-      font-weight: 900;
-      color: var(--ink);
-    }
-
-    .todo-item.checked span {
-      text-decoration: line-through;
-      opacity: 0.55;
-    }
-
-    .reset-btn {
-      background: var(--bg-paper);
-      border: 2px solid var(--ink);
-      border-radius: 8px;
-      padding: 2px 8px;
-      font-size: 11px;
-      font-family: inherit;
-      font-weight: 900;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-
-    /* 動畫設定 */
-    @keyframes carBounce {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-3px); }
-    }
-
-    @keyframes sunRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes cloudFloat {
-      0%, 100% { transform: translateX(0px); }
-      50% { transform: translateX(8px); }
-    }
-
-    @keyframes popBounce {
-      0% { opacity: 0.4; transform: scale(0.96) translateY(8px); }
-      65% { opacity: 1; transform: scale(1.015) translateY(-2px); }
-      100% { opacity: 1; transform: scale(1) translateY(0); }
-    }
-
-    .svg-car { animation: carBounce 1.8s ease-in-out infinite; }
-    .svg-sun { transform-origin: 335px 52px; animation: sunRotate 24s linear infinite; }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--bg-paper); color: var(--ink); font-family: 'jf-openhuninn-2.0', 'Zen Maru Gothic', sans-serif; line-height: 1.6; padding-bottom: 60px; }
+    .app-container { max-width: 480px; margin: 0 auto; padding: 0 16px; }
+
+    header.top-nav { position: sticky; top: 0; z-index: 100; background-color: var(--bg-paper); border-bottom: var(--border); padding: 10px 12px; }
+    .nav-inner { max-width: 480px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+    .brand-group { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+    .lang-toggle-btn { background: var(--coral); color: var(--ink); border: var(--border); border-radius: 10px; padding: 6px 10px; font-weight: 900; font-size: 13px; cursor: pointer; box-shadow: 0 2px 0 var(--ink); display: flex; align-items: center; gap: 4px; }
+    .lang-toggle-btn.en-mode { background: var(--green); }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a { text-decoration: none; color: var(--ink); font-weight: 700; font-size: 13px; padding: 5px 9px; border-radius: var(--radius-sm); border: 2px solid transparent; white-space: nowrap; }
+    .nav-links a.active { background-color: var(--yellow); border: 2px solid var(--ink); }
+
+    .cbp-card { display: none; margin-top: 16px; background: #FFF9E6; border: var(--border); border-radius: var(--radius-lg); padding: 14px 16px; box-shadow: var(--shadow); }
+    .cbp-card.show { display: block; }
+    .cbp-header { display: flex; align-items: center; justify-content: space-between; font-weight: 900; font-size: 15px; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 2px dashed var(--ink); }
+    .cbp-badge { background: var(--green); border: 2px solid var(--ink); border-radius: var(--radius-sm); padding: 2px 8px; font-size: 11px; }
+    .cbp-grid { font-size: 13px; display: grid; gap: 6px; }
+    .cbp-row strong { font-weight: 900; background: var(--yellow); padding: 1px 5px; border-radius: 4px; border: 1.5px solid var(--ink); margin-right: 4px; font-size: 11.5px; }
+
+    .hero-card { margin-top: 18px; background: var(--card-white); border: var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+    .hero-svg-wrap { width: 100%; display: block; background: var(--bg-paper); border-bottom: var(--border); }
+    .hero-info { padding: 20px 16px 24px; text-align: center; background: var(--bg-paper); }
+    .hero-title { font-size: 23px; font-weight: 900; letter-spacing: 1px; margin-bottom: 6px; }
+    .hero-subtitle { font-size: 13.5px; font-weight: 700; opacity: 0.85; margin-bottom: 14px; }
+    .countdown-pill { display: inline-block; background: var(--yellow); border: var(--border); border-radius: var(--radius-sm); padding: 6px 22px; font-size: 15px; font-weight: 900; box-shadow: 0 3px 0 var(--ink); transform: rotate(-1.5deg); }
+    .countdown-pill span { font-size: 21px; margin: 0 4px; }
+
+    .section-header { display: flex; align-items: center; gap: 10px; margin: 32px 0 14px; scroll-margin-top: 72px; }
+    .section-icon { width: 34px; height: 34px; border: var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .section-title { font-size: 19px; font-weight: 900; letter-spacing: 0.5px; }
+
+    .flight-card, .hotel-card, .todo-group { background: var(--card-white); border: var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 16px; box-shadow: var(--shadow); }
+    .flight-head { padding: 10px 16px; border-bottom: var(--border); display: flex; justify-content: space-between; align-items: center; font-weight: 900; font-size: 13.5px; }
+    .flight-body { padding: 16px; }
+    .flight-route { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .flight-time { font-size: 25px; font-weight: 900; line-height: 1.1; }
+    .flight-airport { font-size: 12.5px; font-weight: 700; margin-top: 4px; }
+    .flight-duration { flex: 1; text-align: center; padding: 0 10px; font-size: 12px; font-weight: 700; }
+    .flight-line { border-top: 3px dotted var(--ink); margin-bottom: 4px; }
+    .flight-tags { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 10px; border-top: 2px dashed #E0DCD5; font-size: 12px; font-weight: 700; }
+    .tag { padding: 3px 10px; border: 2px solid var(--ink); border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 4px; }
+
+    .bg-blue { background-color: var(--blue); } .bg-coral { background-color: var(--coral); } .bg-yellow { background-color: var(--yellow); } .bg-green { background-color: var(--green); } .bg-paper { background-color: var(--bg-paper); }
+
+    .day-tabs-wrap { display: flex; gap: 8px; overflow-x: auto; padding: 4px 2px 12px; margin-bottom: 12px; scrollbar-width: none; }
+    .day-tabs-wrap::-webkit-scrollbar { display: none; }
+    .day-tab { flex-shrink: 0; background: var(--card-white); border: var(--border); border-radius: var(--radius-md); padding: 8px 14px; cursor: pointer; text-align: center; font-family: inherit; color: var(--ink); box-shadow: 0 3px 0 var(--ink); transition: transform 0.15s ease, background-color 0.15s ease; }
+    .day-tab .d-num { font-size: 15px; font-weight: 900; display: block; }
+    .day-tab .d-city { font-size: 11px; font-weight: 700; opacity: 0.85; }
+    .day-tab.active { background: var(--coral); transform: translateY(2px); box-shadow: 0 1px 0 var(--ink); }
+
+    .day-summary-banner { background: var(--yellow); border: var(--border); border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; font-weight: 900; font-size: 13.5px; box-shadow: 0 3px 0 var(--ink); }
+    .timeline-list { position: relative; padding-left: 22px; }
+    .timeline-list::before { content: ''; position: absolute; left: 6px; top: 12px; bottom: 12px; width: 3px; background: var(--ink); }
+    .timeline-item { position: relative; background: var(--card-white); border: var(--border); border-radius: var(--radius-md); padding: 14px; margin-bottom: 14px; box-shadow: 0 3px 0 var(--ink); }
+    .timeline-item::before { content: ''; position: absolute; left: -23px; top: 18px; width: 13px; height: 13px; background: var(--yellow); border: var(--border); border-radius: 50%; }
+    .tl-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+    .tl-time { font-weight: 900; font-size: 14px; background: var(--bg-paper); padding: 2px 8px; border: 2px solid var(--ink); border-radius: 8px; }
+    .tl-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge { font-size: 11px; font-weight: 900; padding: 2px 8px; border: 2px solid var(--ink); border-radius: var(--radius-sm); }
+    .badge-must { background: var(--coral); }
+    .tl-title { font-size: 16px; font-weight: 900; margin-bottom: 4px; }
+    .tl-desc { font-size: 13.5px; margin-bottom: 8px; }
+    .map-btn { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 900; color: var(--ink); background: var(--bg-paper); border: 2px solid var(--ink); border-radius: 8px; padding: 4px 10px; text-decoration: none; }
+
+    .hotel-card { padding: 14px; }
+    .hotel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 8px; flex-wrap: wrap; }
+    .hotel-city { font-weight: 900; font-size: 15.5px; }
+    .hotel-nights { font-size: 11.5px; font-weight: 900; padding: 2px 10px; border: 2px solid var(--ink); border-radius: var(--radius-sm); background: var(--green); }
+    .hotel-desc { font-size: 13.5px; margin-bottom: 8px; }
+
+    .todo-group { padding: 16px; }
+    .todo-group-title { font-size: 15.5px; font-weight: 900; padding-bottom: 8px; margin-bottom: 10px; border-bottom: 2px dashed var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .todo-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 4px; cursor: pointer; font-size: 13.5px; font-weight: 700; user-select: none; }
+    .todo-item input[type="checkbox"] { appearance: none; -webkit-appearance: none; width: 22px; height: 22px; border: var(--border); border-radius: 6px; background: var(--bg-paper); cursor: pointer; flex-shrink: 0; margin-top: 2px; position: relative; }
+    .todo-item input[type="checkbox"]:checked { background: var(--green); }
+    .todo-item input[type="checkbox"]:checked::after { content: '✓'; position: absolute; left: 3px; top: -3px; font-size: 16px; font-weight: 900; color: var(--ink); }
+    .todo-item.checked span { text-decoration: line-through; opacity: 0.55; }
+    .reset-btn { background: var(--bg-paper); border: 2px solid var(--ink); border-radius: 8px; padding: 2px 8px; font-size: 11px; font-family: inherit; font-weight: 900; cursor: pointer; flex-shrink: 0; }
+
+    @keyframes cloudFloat { 0%, 100% { transform: translateX(0px); } 50% { transform: translateX(8px); } }
+    @keyframes popBounce { 0% { opacity: 0.4; transform: scale(0.96) translateY(8px); } 65% { opacity: 1; transform: scale(1.015) translateY(-2px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
     .svg-cloud { animation: cloudFloat 5s ease-in-out infinite; }
     .bounce-enter { animation: popBounce 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- 頂端固定導覽列（左上角附設 EN / 中 切換按鈕） -->
   <header class="top-nav">
     <div class="nav-inner">
       <div class="brand-group">
@@ -672,7 +133,6 @@
 
   <main class="app-container">
 
-    <!-- 英文模式下自動顯示的「CBP 海關官員快速檢視卡」 -->
     <section class="cbp-card bounce-enter" id="cbp-summary">
       <div class="cbp-header">
         <span>🛂 US CBP Officer Quick Summary</span>
@@ -680,81 +140,45 @@
       </div>
       <div class="cbp-grid">
         <div class="cbp-row"><strong>Travelers</strong> Chieh Lee (李杰) & Spouse (Married Couple)</div>
-        <div class="cbp-row"><strong>Purpose</strong> 16-Day Vacation & Interstate Road Trip</div>
+        <div class="cbp-row"><strong>Purpose</strong> 16-Day Chicago & Purdue Trip (Visiting Friend)</div>
         <div class="cbp-row"><strong>Occupation</strong> Administrator, Integrated Marketing Communications Dept. at Chunghwa Telecom (Taiwan)</div>
-        <div class="cbp-row"><strong>Route</strong> Chicago (3N) ➔ Louisville (1N) ➔ Nashville (2N) ➔ Atlanta (2N) ➔ Savannah (1N) ➔ Orlando (5N) ➔ Fly MCO-ORD</div>
-        <div class="cbp-row"><strong>Confirmed Return</strong> Feb 21, 2027 · EVA Air BR55 (ORD 00:20 ➔ TPE)</div>
+        <div class="cbp-row"><strong>Accommodation</strong> Friend's Residence at 435 N Michigan Ave, Chicago, IL[cite: 1]</div>
+        <div class="cbp-row"><strong>Confirmed Return</strong> Feb 22, 2027 · EVA Air BR55 (ORD 00:30 ➔ TPE)[cite: 1]</div>
       </div>
     </section>
 
-    <!-- 首頁繪本風插畫卡片 -->
     <section class="hero-card">
-      <svg class="hero-svg-wrap" viewBox="0 0 400 185" xmlns="http://www.w3.org/2000/svg" aria-label="Chicago to Orlando Road Trip Illustration">
-        <rect width="400" height="185" fill="#FFFCF6"/>
+      <svg class="hero-svg-wrap" viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" aria-label="Chicago Road Trip Illustration">
+        <rect width="400" height="150" fill="#FFFCF6"/>
         <g class="svg-cloud" stroke="#3E3A39" stroke-width="3" fill="#FFFFFF">
           <path d="M35 55 Q42 42 56 46 Q68 38 78 50 Q88 52 85 62 L32 62 Q26 58 35 55 Z"/>
+          <path d="M235 45 Q242 32 256 36 Q268 28 278 40 Q288 42 285 52 L232 52 Q226 48 235 45 Z" transform="scale(0.8) translate(80, -10)"/>
         </g>
         <circle cx="45" cy="74" r="2.5" fill="#A8D3E6"/>
         <circle cx="65" cy="78" r="2.5" fill="#A8D3E6"/>
         <circle cx="55" cy="86" r="2.5" fill="#A8D3E6"/>
-
-        <g class="svg-sun">
-          <circle cx="335" cy="52" r="20" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          <line x1="335" y1="22" x2="335" y2="15" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="335" y1="82" x2="335" y2="89" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="305" y1="52" x2="298" y2="52" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="365" y1="52" x2="372" y2="52" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="314" y1="31" x2="309" y2="26" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="356" y1="73" x2="361" y2="78" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="356" y1="31" x2="361" y2="26" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-          <line x1="314" y1="73" x2="309" y2="78" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-        </g>
-
-        <rect x="22" y="96" width="24" height="44" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
-        <rect x="46" y="82" width="28" height="58" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
-        <line x1="55" y1="82" x2="55" y2="70" stroke="#3E3A39" stroke-width="3"/>
-        <path d="M58 140 C58 120 98 120 98 140 C98 143 85 140 78 140 C70 140 58 143 58 140 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
-
-        <polygon points="295,140 310,102 325,140" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
-        <rect x="303" y="122" width="14" height="18" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
-        <path d="M358 140 Q362 112 352 95" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
-        <path d="M352 95 Q335 92 332 103 Q344 100 352 95 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/>
-        <path d="M352 95 Q368 88 375 98 Q362 98 352 95 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/>
-        <path d="M352 95 Q345 80 358 78 Q356 88 352 95 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="2.5"/>
-
-        <rect x="0" y="140" width="400" height="45" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
-        <rect x="0" y="152" width="400" height="24" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
-        <line x1="15" y1="164" x2="385" y2="164" stroke="#3E3A39" stroke-width="3" stroke-dasharray="12 10"/>
-
-        <g class="svg-car">
-          <rect x="172" y="103" width="44" height="10" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
-          <path d="M155 132 L164 113 L222 113 L234 126 L246 128 L246 144 L155 144 Z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/>
-          <polygon points="169,117 192,117 192,128 164,128" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-          <polygon points="197,117 218,117 226,128 197,128" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5"/>
-          <circle cx="175" cy="145" r="9" fill="#3E3A39"/>
-          <circle cx="175" cy="145" r="3.5" fill="#FFFCF6"/>
-          <circle cx="225" cy="145" r="9" fill="#3E3A39"/>
-          <circle cx="225" cy="145" r="3.5" fill="#FFFCF6"/>
-        </g>
+        <rect x="150" y="70" width="24" height="60" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <rect x="174" y="50" width="28" height="80" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <rect x="126" y="85" width="24" height="45" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+        <line x1="188" y1="50" x2="188" y2="25" stroke="#3E3A39" stroke-width="3"/>
+        <path d="M195 130 C195 105 245 105 245 130 C245 135 225 130 220 130 C210 130 195 135 195 130 Z" fill="#FFFFFF" stroke="#3E3A39" stroke-width="3"/>
+        <rect x="0" y="130" width="400" height="20" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
       </svg>
-
       <div class="hero-info">
-        <h1 class="hero-title" data-i18n="heroTitle">美中南跨州公路 16 天</h1>
-        <p class="hero-subtitle" data-i18n="heroSubtitle">2027 · 02/06 (六) – 02/21 (日)｜芝加哥 ➔ 奧蘭多</p>
+        <h1 class="hero-title" data-i18n="heroTitle">法鬥迎新派對之旅[cite: 1]</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">2027 · 02/07 (日) – 02/22 (一)｜芝加哥與普渡大學</p>
         <div class="countdown-pill" id="countdown-box"></div>
       </div>
     </section>
 
-    <!-- 航班資訊區 -->
     <div class="section-header" id="flights">
       <div class="section-icon bg-blue">✈</div>
-      <h2 class="section-title" data-i18n="secFlights">航班與跨州銜接</h2>
+      <h2 class="section-title" data-i18n="secFlights">航班資訊</h2>
     </div>
 
-    <!-- 去程 -->
     <div class="flight-card">
       <div class="flight-head bg-blue">
-        <span data-i18n="f1Head">02/06 (六) 去程｜長榮航空</span>
+        <span data-i18n="f1Head">02/07 (日) 去程｜長榮航空</span>
         <span>BR56 · B777-300ER</span>
       </div>
       <div class="flight-body">
@@ -764,66 +188,35 @@
             <div class="flight-airport" data-i18n="f1Dep">桃園 TPE T2</div>
           </div>
           <div class="flight-duration">
-            <div data-i18n="f1Dur">約 13h 40m 直飛</div>
+            <div data-i18n="f1Dur">直飛</div>
             <div class="flight-line"></div>
             <div data-i18n="f1Sub">跨日抵達</div>
           </div>
           <div style="text-align: right;">
-            <div class="flight-time">19:40</div>
-            <div class="flight-airport" data-i18n="f1Arr">芝加哥 ORD T5</div>
+            <div class="flight-time">21:00</div>
+            <div class="flight-airport" data-i18n="f1Arr">芝加哥 ORD[cite: 1]</div>
           </div>
         </div>
         <div class="flight-tags">
           <span class="tag bg-yellow" data-i18n="f1Tag1">皇璽桂冠艙 6A</span>
-          <span class="tag bg-paper" data-i18n="f1Tag2">160,000 哩程兌換</span>
           <span class="tag bg-green" data-i18n="f1Tag3">隨身備妥 Mack's 耳塞＋抗噪耳機</span>
         </div>
       </div>
     </div>
 
-    <!-- 中段國內線 -->
-    <div class="flight-card">
-      <div class="flight-head bg-yellow">
-        <span data-i18n="f2Head">02/20 (六) 國內線北返｜單程異地還車銜接</span>
-        <span>MCO ➔ ORD</span>
-      </div>
-      <div class="flight-body">
-        <div class="flight-route">
-          <div>
-            <div class="flight-time">11:30</div>
-            <div class="flight-airport" data-i18n="f2Dep">奧蘭多 MCO</div>
-          </div>
-          <div class="flight-duration">
-            <div data-i18n="f2Dur">約 3h 05m</div>
-            <div class="flight-line"></div>
-            <div data-i18n="f2Sub">省去 18hr 回頭車</div>
-          </div>
-          <div style="text-align: right;">
-            <div class="flight-time">13:35</div>
-            <div class="flight-airport" data-i18n="f2Arr">芝加哥 ORD</div>
-          </div>
-        </div>
-        <div class="flight-tags">
-          <span class="tag bg-coral" data-i18n="f2Tag1">MCO 機場歸還租車與 SunPass Pro</span>
-          <span class="tag bg-paper" data-i18n="f2Tag2">預留充裕轉機緩衝</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- 回程 -->
     <div class="flight-card">
       <div class="flight-head bg-coral">
-        <span data-i18n="f3Head">02/21 (日) 回程｜長榮航空</span>
+        <span data-i18n="f3Head">02/22 (一) 回程｜長榮航空</span>
         <span>BR55 · B777-300ER</span>
       </div>
       <div class="flight-body">
         <div class="flight-route">
           <div>
-            <div class="flight-time">00:20</div>
-            <div class="flight-airport" data-i18n="f3Dep">芝加哥 ORD T5</div>
+            <div class="flight-time">00:30</div>
+            <div class="flight-airport" data-i18n="f3Dep">芝加哥 ORD[cite: 1]</div>
           </div>
           <div class="flight-duration">
-            <div data-i18n="f3Dur">約 16h 05m 直飛</div>
+            <div data-i18n="f3Dur">直飛</div>
             <div class="flight-line"></div>
             <div data-i18n="f3Sub">+1 日抵達</div>
           </div>
@@ -834,12 +227,10 @@
         </div>
         <div class="flight-tags">
           <span class="tag bg-yellow" data-i18n="f3Tag1">皇璽桂冠艙 6A</span>
-          <span class="tag bg-green" data-i18n="f3Tag2">02/20 晚間至 ORD 貴賓室休息登機</span>
         </div>
       </div>
     </div>
 
-    <!-- 每日行程區 -->
     <div class="section-header" id="itinerary">
       <div class="section-icon bg-coral">🗺</div>
       <h2 class="section-title" data-i18n="secItinerary">每日行程（點擊切換）</h2>
@@ -848,50 +239,22 @@
     <div class="day-tabs-wrap" id="day-tabs"></div>
     <div id="day-content"></div>
 
-    <!-- 住宿與會籍攻略區 -->
     <div class="section-header" id="hotels">
       <div class="section-icon bg-green">🏨</div>
-      <h2 class="section-title" data-i18n="secHotels">住宿與高卡權益備忘</h2>
+      <h2 class="section-title" data-i18n="secHotels">住宿據點</h2>
     </div>
 
     <div class="hotel-card">
       <div class="hotel-header">
-        <span class="hotel-city" data-i18n="h1City">📍 芝加哥市區 (D1–D3)</span>
-        <span class="hotel-nights" data-i18n="h1Nights">3 晚 · 無車階段</span>
+        <span class="hotel-city" data-i18n="h1City">📍 朋友 Rick 的市區公寓[cite: 1]</span>
+        <span class="hotel-nights" data-i18n="h1Nights">15 晚 · 全程入住[cite: 1]</span>
       </div>
-      <p class="hotel-desc" data-i18n="h1Desc">選址密西根大道（Magnificent Mile）周邊，方便與老友及法鬥聚會，且完全省下市區每晚 $70–$85 美金的高昂停車費。</p>
+      <p class="hotel-desc" data-i18n="h1Desc">435 N Michigan Ave, Chicago, IL[cite: 1]</p>
       <div class="flight-tags">
-        <span class="tag bg-yellow" data-i18n="h1Tag1">萬豪金卡 / 希爾頓金卡 / GHA 鈦金</span>
-        <span class="tag bg-paper" data-i18n="h1Tag2">雙床房 (Twin Beds)</span>
-        <span class="tag bg-paper" data-i18n="h1Tag3">禁菸房＆延遲退房</span>
+        <span class="tag bg-yellow" data-i18n="h1Tag1">無需更換飯店，免除搬行李之苦</span>
       </div>
     </div>
 
-    <div class="hotel-card">
-      <div class="hotel-header">
-        <span class="hotel-city" data-i18n="h2City">📍 跨州公路沿線 (D4–D10)</span>
-        <span class="hotel-nights" data-i18n="h2Nights">納什維爾 · 亞特蘭大 · 薩凡納</span>
-      </div>
-      <p class="hotel-desc" data-i18n="h2Desc">自駕階段優先選擇州際公路交流道旁或附設免費停車的萬豪／希爾頓旗下飯店，善用金卡早餐、房型升等與下午 2 點延遲退房。</p>
-      <div class="flight-tags">
-        <span class="tag bg-blue" data-i18n="h2Tag1">確認免費或低價停車</span>
-        <span class="tag bg-paper" data-i18n="h2Tag2">雙床禁菸房</span>
-      </div>
-    </div>
-
-    <div class="hotel-card">
-      <div class="hotel-header">
-        <span class="hotel-city" data-i18n="h3City">📍 奧蘭多度假區 (D11–D14)</span>
-        <span class="hotel-nights" data-i18n="h3Nights">4 晚 · 避開總統日週末</span>
-      </div>
-      <p class="hotel-desc" data-i18n="h3Desc">入住園區周邊合作飯店或國際大道（I-Drive）連鎖飯店，可搭配 GHA DISCOVERY D$ 折抵或萬豪積分兌換。</p>
-      <div class="flight-tags">
-        <span class="tag bg-coral" data-i18n="h3Tag1">園區提早入園權益</span>
-        <span class="tag bg-green" data-i18n="h3Tag2">善用 GHA D$ 回饋金</span>
-      </div>
-    </div>
-
-    <!-- 待辦與打包清單區 -->
     <div class="section-header" id="prep">
       <div class="section-icon bg-yellow">✓</div>
       <h2 class="section-title" data-i18n="secPrep">行前待辦與打包清單</h2>
@@ -899,24 +262,20 @@
 
     <div class="todo-group">
       <div class="todo-group-title">
-        <span data-i18n="todoGroup1">🛂 入境演練與自駕硬體</span>
+        <span data-i18n="todoGroup1">🛂 入境演練與採購任務</span>
         <button class="reset-btn" id="reset-todo" data-i18n="resetBtn">重置勾選</button>
       </div>
       <label class="todo-item"><input type="checkbox" data-id="t1"><span data-i18n="todo1">準備海關口說小抄（任職於 Chunghwa Telecom — Administrator, Integrated Marketing Communications Dept.）</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="t2"><span data-i18n="todo2">印出紙本回程機票、跨州飯店預訂確認單與 ESTA 核准證明</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="t3"><span data-i18n="todo3">台灣國際駕照＋台灣汽車駕照正本（兩者皆須在效期內）</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="t4"><span data-i18n="todo4">預約 D4 早上取車（指定 AWD 全時四驅車款＋車載雪刷與除冰刮刀）</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="t5"><span data-i18n="todo5">購入或設定跨州電子收費器（E-ZPass / 佛州可攜式 SunPass Pro，省去租車公司每日代收手續費）</span></label>
+      <label class="todo-item"><input type="checkbox" data-id="t2"><span data-i18n="todo2">印出紙本回程機票與 ESTA 核准證明</span></label>
+      <label class="todo-item"><input type="checkbox" data-id="t3"><span data-i18n="todo3">確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL[cite: 1] 以備海關詢問住宿地點</span></label>
     </div>
 
     <div class="todo-group">
       <div class="todo-group-title">
-        <span data-i18n="todoGroup2">🧥 2月極寒芝加哥 vs. 暖冬奧蘭多「雙膠囊穿搭」</span>
+        <span data-i18n="todoGroup2">🧥 芝加哥極寒穿搭與飛行備品</span>
       </div>
-      <label class="todo-item"><input type="checkbox" data-id="c1"><span data-i18n="todo6">【北段極寒膠囊 -5°C~2°C】防風防水長版羽絨外套、發熱衣褲、羊毛襪、防水防滑靴、觸控手套、毛帽（D6 離開田納西後封入真空袋放後車廂底層）</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="c2"><span data-i18n="todo7">【南段暖冬膠囊 15°C~26°C】短袖 T 恤、薄長袖襯衫、輕便防曬連帽外套、好走的樂園運動鞋、太陽眼鏡</span></label>
+      <label class="todo-item"><input type="checkbox" data-id="c1"><span data-i18n="todo6">【極寒膠囊 -5°C~2°C】防風防水長版羽絨外套、發熱衣褲、羊毛襪、防水防滑靴、觸控手套、毛帽</span></label>
       <label class="todo-item"><input type="checkbox" data-id="c3"><span data-i18n="todo8">【長途飛行舒適包】Mack's 隔音耳塞、AirPods Pro 3 降噪耳機、保濕護唇膏與隨身保溫瓶</span></label>
-      <label class="todo-item"><input type="checkbox" data-id="c4"><span data-i18n="todo9">【大採購策略】大型家電／精品留到佛州奧蘭多（消費稅約 6.5% vs 芝加哥 10.25%）；買衣服留在喬治亞或田納西 Outlet</span></label>
     </div>
   </main>
 
@@ -924,409 +283,150 @@
     let currentLang = 'zh';
     let currentDayIndex = 0;
 
-    // 雙語靜態文字字典
     const i18nDict = {
       zh: {
         navFlights: "航班", navItinerary: "行程", navHotels: "住宿", navPrep: "準備",
-        heroTitle: "美中南跨州公路 16 天",
-        heroSubtitle: "2027 · 02/06 (六) – 02/21 (日)｜芝加哥 ➔ 奧蘭多",
-        secFlights: "航班與跨州銜接",
-        f1Head: "02/06 (六) 去程｜長榮航空", f1Dep: "桃園 TPE T2", f1Dur: "約 13h 40m 直飛", f1Sub: "跨日抵達", f1Arr: "芝加哥 ORD T5",
-        f1Tag1: "皇璽桂冠艙 6A", f1Tag2: "160,000 哩程兌換", f1Tag3: "隨身備妥 Mack's 耳塞＋抗噪耳機",
-        f2Head: "02/20 (六) 國內線北返｜單程異地還車銜接", f2Dep: "奧蘭多 MCO", f2Dur: "約 3h 05m", f2Sub: "省去 18hr 回頭車", f2Arr: "芝加哥 ORD",
-        f2Tag1: "MCO 機場歸還租車與 SunPass Pro", f2Tag2: "預留充裕轉機緩衝",
-        f3Head: "02/21 (日) 回程｜長榮航空", f3Dep: "芝加哥 ORD T5", f3Dur: "約 16h 05m 直飛", f3Sub: "+1 日抵達", f3Arr: "桃園 TPE T2",
-        f3Tag1: "皇璽桂冠艙 6A", f3Tag2: "02/20 晚間至 ORD 貴賓室休息登機",
-        secItinerary: "每日行程（點擊切換）",
-        secHotels: "住宿與高卡權益備忘",
-        h1City: "📍 芝加哥市區 (D1–D3)", h1Nights: "3 晚 · 無車階段",
-        h1Desc: "選址密西根大道（Magnificent Mile）周邊，方便與老友及法鬥聚會，且完全省下市區每晚 $70–$85 美金的高昂停車費。",
-        h1Tag1: "萬豪金卡 / 希爾頓金卡 / GHA 鈦金", h1Tag2: "雙床房 (Twin Beds)", h1Tag3: "禁菸房＆延遲退房",
-        h2City: "📍 跨州公路沿線 (D4–D10)", h2Nights: "納什維爾 · 亞特蘭大 · 薩凡納",
-        h2Desc: "自駕階段優先選擇州際公路交流道旁或附設免費停車的萬豪／希爾頓旗下飯店，善用金卡早餐、房型升等與下午 2 點延遲退房。",
-        h2Tag1: "確認免費或低價停車", h2Tag2: "雙床禁菸房",
-        h3City: "📍 奧蘭多度假區 (D11–D14)", h3Nights: "4 晚 · 避開總統日週末",
-        h3Desc: "入住園區周邊合作飯店或國際大道（I-Drive）連鎖飯店，可搭配 GHA DISCOVERY D$ 折抵或萬豪積分兌換。",
-        h3Tag1: "園區提早入園權益", h3Tag2: "善用 GHA D$ 回饋金",
-        secPrep: "行前待辦與打包清單",
-        todoGroup1: "🛂 入境演練與自駕硬體", resetBtn: "重置勾選",
+        heroTitle: "法鬥迎新派對之旅[cite: 1]", heroSubtitle: "2027 · 02/07 (日) – 02/22 (一)｜芝加哥與普渡大學",
+        secFlights: "航班資訊",
+        f1Head: "02/07 (日) 去程｜長榮航空", f1Dep: "桃園 TPE T2", f1Dur: "直飛", f1Sub: "跨日抵達", f1Arr: "芝加哥 ORD",
+        f1Tag1: "皇璽桂冠艙 6A", f1Tag3: "隨身備妥 Mack's 耳塞＋抗噪耳機",
+        f3Head: "02/22 (一) 回程｜長榮航空", f3Dep: "芝加哥 ORD", f3Dur: "直飛", f3Sub: "+1 日抵達", f3Arr: "桃園 TPE T2",
+        f3Tag1: "皇璽桂冠艙 6A",
+        secItinerary: "每日行程（點擊切換）", secHotels: "住宿據點",
+        h1City: "📍 朋友 Rick 的市區公寓[cite: 1]", h1Nights: "15 晚 · 全程入住[cite: 1]",
+        h1Desc: "435 N Michigan Ave, Chicago, IL[cite: 1]", h1Tag1: "無需更換飯店，免除搬行李之苦",
+        secPrep: "行前待辦與打包清單", todoGroup1: "🛂 入境演練與採購任務", resetBtn: "重置勾選",
         todo1: "準備海關口說小抄（任職於 Chunghwa Telecom — Administrator, Integrated Marketing Communications Dept.）",
-        todo2: "印出紙本回程機票、跨州飯店預訂確認單與 ESTA 核准證明",
-        todo3: "台灣國際駕照＋台灣汽車駕照正本（兩者皆須在效期內）",
-        todo4: "預約 D4 早上取車（指定 AWD 全時四驅車款＋車載雪刷與除冰刮刀）",
-        todo5: "購入或設定跨州電子收費器（E-ZPass / 佛州可攜式 SunPass Pro，省去租車公司每日代收手續費）",
-        todoGroup2: "🧥 2月極寒芝加哥 vs. 暖冬奧蘭多「雙膠囊穿搭」",
-        todo6: "【北段極寒膠囊 -5°C~2°C】防風防水長版羽絨外套、發熱衣褲、羊毛襪、防水防滑靴、觸控手套、毛帽（D6 離開田納西後封入真空袋放後車廂底層）",
-        todo7: "【南段暖冬膠囊 15°C~26°C】短袖 T 恤、薄長袖襯衫、輕便防曬連帽外套、好走的樂園運動鞋、太陽眼鏡",
+        todo2: "印出紙本回程機票與 ESTA 核准證明",
+        todo3: "確認好朋友 Rick 家地址：435 N Michigan Ave, Chicago, IL[cite: 1] 以備海關詢問住宿地點",
+        todoGroup2: "🧥 芝加哥極寒穿搭與飛行備品",
+        todo6: "【極寒膠囊 -5°C~2°C】防風防水長版羽絨外套、發熱衣褲、羊毛襪、防水防滑靴、觸控手套、毛帽",
         todo8: "【長途飛行舒適包】Mack's 隔音耳塞、AirPods Pro 3 降噪耳機、保濕護唇膏與隨身保溫瓶",
-        todo9: "【大採購策略】大型家電／精品留到佛州奧蘭多（消費稅約 6.5% vs 芝加哥 10.25%）；買衣服留在喬治亞或田納西 Outlet",
-        mustBadge: "★ 必去",
-        mapBtnText: "📍 在 Google Maps 開啟"
+        mustBadge: "★ 必去", mapBtnText: "📍 在 Google Maps 開啟"
       },
       en: {
         navFlights: "Flights", navItinerary: "Schedule", navHotels: "Hotels", navPrep: "Checklist",
-        heroTitle: "16-Day US Road Trip",
-        heroSubtitle: "Feb 6 – Feb 21, 2027 | Chicago, IL ➔ Orlando, FL",
-        secFlights: "Confirmed Flights & Connections",
-        f1Head: "Feb 6 (Sat) Inbound | EVA Air", f1Dep: "Taipei TPE T2", f1Dur: "13h 40m Non-stop", f1Sub: "Same-day Arrival", f1Arr: "Chicago ORD T5",
-        f1Tag1: "Royal Laurel Class · Seat 6A", f1Tag2: "Award Ticket (Confirmed)", f1Tag3: "Arriving with Spouse",
-        f2Head: "Feb 20 (Sat) Domestic Return | One-Way Rental Drop-off", f2Dep: "Orlando MCO", f2Dur: "3h 05m Non-stop", f2Sub: "Fly back to Chicago", f2Arr: "Chicago ORD",
-        f2Tag1: "Return Rental SUV at MCO Airport", f2Tag2: "Connect to International Departure",
-        f3Head: "Feb 21 (Sun) Outbound Return | EVA Air", f3Dep: "Chicago ORD T5", f3Dur: "16h 05m Non-stop", f3Sub: "Arrives Feb 22 (+1)", f3Arr: "Taipei TPE T2",
-        f3Tag1: "Royal Laurel Class · Seat 6A", f3Tag2: "Confirmed Return Ticket to Taiwan",
-        secItinerary: "16-Day Daily Itinerary (Tap Day)",
-        secHotels: "Accommodations & Loyalty Plan",
-        h1City: "📍 Downtown Chicago, IL (D1–D3)", h1Nights: "3 Nights · Pedestrian Mode",
-        h1Desc: "Staying near Magnificent Mile (Michigan Ave) to visit sights and meet our close friend. No rental car needed in downtown Chicago.",
-        h1Tag1: "Marriott Gold / Hilton Gold / GHA Titanium", h1Tag2: "Twin Beds", h1Tag3: "Non-Smoking",
-        h2City: "📍 Interstate Road Trip Stops (D4–D10)", h2Nights: "Louisville · Nashville · Atlanta · Savannah",
-        h2Desc: "Staying at Marriott and Hilton properties along I-65, I-75, and I-95 with on-site parking during our drive south.",
-        h2Tag1: "Confirmed Hotel Bookings", h2Tag2: "Twin Beds · Non-Smoking",
-        h3City: "📍 Orlando Resort Area, FL (D11–D14)", h3Nights: "4 Nights · Theme Parks & Sightseeing",
-        h3Desc: "Staying near Universal Orlando / Walt Disney World & International Drive before flying back to Chicago on Feb 20.",
-        h3Tag1: "Early Park Admission", h3Tag2: "GHA DISCOVERY / Marriott",
-        secPrep: "Travel Documents & Packing Checklist",
-        todoGroup1: "🛂 Travel Documents & Rental Car", resetBtn: "Reset",
-        todo1: "Employment Info: Administrator, Integrated Marketing Communications Dept. at Chunghwa Telecom (Taiwan)",
-        todo2: "Printed Return E-Tickets (BR55), Hotel Confirmations & Approved ESTA",
-        todo3: "Valid International Driving Permit (IDP) + Original Taiwan Driver's License",
-        todo4: "Feb 9 (D4) Morning Pick-up: AWD SUV for Interstate Drive (Chicago to Orlando)",
-        todo5: "Electronic Toll Pass (E-ZPass / Florida SunPass Pro) for Interstate Highways",
-        todoGroup2: "🧥 Winter (Chicago) & Warm (Florida) Packing",
+        heroTitle: "Frenchie Welcome Tour[cite: 1]", heroSubtitle: "Feb 7 – Feb 22, 2027 | Chicago & Purdue",
+        secFlights: "Confirmed Flights",
+        f1Head: "Feb 7 (Sun) Inbound | EVA Air", f1Dep: "Taipei TPE T2", f1Dur: "Non-stop", f1Sub: "Same-day Arrival", f1Arr: "Chicago ORD",
+        f1Tag1: "Royal Laurel Class · Seat 6A", f1Tag3: "Arriving with Spouse",
+        f3Head: "Feb 22 (Mon) Outbound Return | EVA Air", f3Dep: "Chicago ORD", f3Dur: "Non-stop", f3Sub: "Arrives +1 Day", f3Arr: "Taipei TPE T2",
+        f3Tag1: "Royal Laurel Class · Seat 6A",
+        secItinerary: "16-Day Daily Itinerary (Tap Day)", secHotels: "Accommodation",
+        h1City: "📍 Rick's Apartment[cite: 1]", h1Nights: "15 Nights[cite: 1]",
+        h1Desc: "435 N Michigan Ave, Chicago, IL[cite: 1]", h1Tag1: "Staying with friend",
+        secPrep: "Travel Documents & Packing Checklist", todoGroup1: "🛂 Travel Documents", resetBtn: "Reset",
+        todo1: "Employment Info: Administrator, Integrated Marketing Communications Dept. at Chunghwa Telecom",
+        todo2: "Printed Return E-Tickets & Approved ESTA",
+        todo3: "Address for Customs: 435 N Michigan Ave, Chicago, IL[cite: 1]",
+        todoGroup2: "🧥 Winter Packing",
         todo6: "[Chicago Winter Gear] Heavy down parka, thermal layers, gloves, and winter boots",
-        todo7: "[Florida Warm Gear] T-shirts, light jacket, walking sneakers for theme parks, sunglasses",
-        todo8: "[In-Flight Kit] Mack's earplugs, AirPods Pro 3 noise-canceling headphones, insulated bottle",
-        todo9: "[Shopping Plan] Outlet shopping in Orlando Vineland Premium Outlets",
-        mustBadge: "★ Highlight",
-        mapBtnText: "📍 Open in Google Maps"
+        todo8: "[In-Flight Kit] Mack's earplugs, AirPods Pro 3 noise-canceling headphones",
+        mustBadge: "★ Highlight", mapBtnText: "📍 Open in Google Maps"
       }
     };
 
-    // 16 天雙語行程資料庫
     const itineraryData = [
       {
         day: "D1",
-        zh: {
-          date: "02/06 (六)", city: "芝加哥", route: "台北 ➔ 芝加哥 (調時差首夜)",
-          items: [
-            { time: "20:00", tag: "長榮 BR56", tagColor: "bg-blue", must: false, title: "桃園機場 T2 起飛", desc: "皇璽桂冠艙 6A 入座，配戴 Mack's 耳塞＋降噪耳機好好睡一覺，依芝加哥時間調整作息。", mapQuery: "Taoyuan International Airport Terminal 2" },
-            { time: "19:40", tag: "入境通關", tagColor: "bg-yellow", must: true, title: "抵達芝加哥歐海爾機場 (ORD)", desc: "從容應對海關提問（來美公路旅遊、任職中華電信整合行銷傳播處），領取行李後搭車進市區。", mapQuery: "O'Hare International Airport Chicago" },
-            { time: "21:30", tag: "住宿入住", tagColor: "bg-green", must: false, title: "密西根大道周邊飯店 Check-in", desc: "前三天市區不租車，省下每日高額停車費。洗熱水澡早點休息克服時差。", mapQuery: "Magnificent Mile Chicago" }
-          ]
-        },
-        en: {
-          date: "Feb 6 (Sat)", city: "Chicago", route: "Taipei (TPE) ➔ Chicago (ORD)",
-          items: [
-            { time: "20:00", tag: "EVA Air BR56", tagColor: "bg-blue", must: false, title: "Depart Taipei Taoyuan Airport (TPE)", desc: "Direct flight to Chicago O'Hare (Royal Laurel Class Seat 6A).", mapQuery: "Taoyuan International Airport Terminal 2" },
-            { time: "19:40", tag: "US Customs", tagColor: "bg-yellow", must: true, title: "Arrive at Chicago O'Hare (ORD T5)", desc: "Clear CBP immigration & customs, then take ride-share/transit to downtown hotel.", mapQuery: "O'Hare International Airport Chicago" },
-            { time: "21:30", tag: "Hotel Check-in", tagColor: "bg-green", must: false, title: "Check-in near Magnificent Mile", desc: "Staying 3 nights in downtown Chicago without a rental car.", mapQuery: "Magnificent Mile Chicago" }
-          ]
-        }
+        zh: { date: "02/07 (日)", city: "抵達", route: "抵達與安頓", items: [ { time: "21:00", tag: "航班降落", tagColor: "bg-coral", must: true, title: "抵達 ORD 機場[cite: 1]", desc: "領取行李後，直接前往朋友 Rick 的市區公寓休息[cite: 1]。", mapQuery: "O'Hare International Airport" } ] },
+        en: { date: "Feb 7 (Sun)", city: "Arrival", route: "Arrival & Check-in", items: [ { time: "21:00", tag: "Arrival", tagColor: "bg-coral", must: true, title: "Arrive at ORD[cite: 1]", desc: "Head directly to the downtown apartment[cite: 1].", mapQuery: "O'Hare International Airport" } ] }
       },
       {
         day: "D2",
-        zh: {
-          date: "02/07 (日)", city: "芝加哥", route: "芝加哥經典地標與老友聚會",
-          items: [
-            { time: "09:30", tag: "步行/地鐵", tagColor: "bg-green", must: true, title: "千禧公園 & 雲門 (The Bean)", desc: "早晨人潮較少，拍攝雪季的銀白豆子與芝加哥天際線倒影（注意防風保暖）。", mapQuery: "Cloud Gate Chicago" },
-            { time: "12:00", tag: "老友相聚", tagColor: "bg-coral", must: true, title: "密西根大道老友聚餐＆擼法鬥", desc: "與住在 Michigan Ave 附近的創投老友聚餐敘舊，順便跟可愛的法國鬥牛犬玩耍！", mapQuery: "Michigan Avenue Chicago" },
-            { time: "15:00", tag: "室內取暖", tagColor: "bg-blue", must: false, title: "芝加哥藝術博物館 / 星巴克臻選烘焙工坊", desc: "下午躲進室內看展，或逛全球最大的四層樓 Starbucks Reserve Roastery 喝杯特調濃縮。", mapQuery: "Starbucks Reserve Roastery Chicago" }
-          ]
-        },
-        en: {
-          date: "Feb 7 (Sun)", city: "Chicago", route: "Downtown Chicago Sightseeing & Friend Reunion",
-          items: [
-            { time: "09:30", tag: "Sightseeing", tagColor: "bg-green", must: true, title: "Millennium Park & Cloud Gate (The Bean)", desc: "Morning walk to see Chicago's iconic Cloud Gate sculpture and skyline.", mapQuery: "Cloud Gate Chicago" },
-            { time: "12:00", tag: "Lunch Reunion", tagColor: "bg-coral", must: true, title: "Lunch with Childhood Friend near Michigan Ave", desc: "Catching up over lunch with our friend living near Michigan Avenue and his French Bulldog.", mapQuery: "Michigan Avenue Chicago" },
-            { time: "15:00", tag: "Museum / Cafe", tagColor: "bg-blue", must: false, title: "Art Institute of Chicago & Starbucks Reserve Roastery", desc: "Afternoon museum visit and coffee at the 4-story Starbucks Reserve Roastery on Michigan Ave.", mapQuery: "Starbucks Reserve Roastery Chicago" }
-          ]
-        }
+        zh: { date: "02/08 (一)", city: "芝加哥", route: "經典地標與深盤披薩", items: [ { time: "10:00", tag: "市區漫步", tagColor: "bg-green", must: false, title: "睡到自然醒[cite: 1]", desc: "逛華麗一英里，吃經典深盤披薩（Lou Malnati's）[cite: 1]。下午去全球最大星巴克臻選烘焙工坊[cite: 1]。", mapQuery: "Lou Malnati's Pizzeria" } ] },
+        en: { date: "Feb 8 (Mon)", city: "Chicago", route: "Magnificent Mile & Deep Dish", items: [ { time: "10:00", tag: "City Walk", tagColor: "bg-green", must: false, title: "Sleep in to adjust to time zone[cite: 1]", desc: "Walk along the Magnificent Mile. Lunch at Lou Malnati's. Visit the massive Starbucks Reserve Roastery[cite: 1].", mapQuery: "Lou Malnati's Pizzeria" } ] }
       },
       {
         day: "D3",
-        zh: {
-          date: "02/08 (一)", city: "芝加哥", route: "建築巡禮與厚底披薩",
-          items: [
-            { time: "10:30", tag: "步行/地鐵", tagColor: "bg-green", must: false, title: "芝加哥河濱步道 & 箭牌大樓", desc: "欣賞芝加哥經典建築群，感受冬季風城魅力。", mapQuery: "Chicago Riverwalk" },
-            { time: "13:00", tag: "經典美食", tagColor: "bg-yellow", must: true, title: "Lou Malnati's 或 Giordano's 深盤披薩", desc: "品嚐芝加哥招牌牽絲 Deep Dish Pizza，熱量滿點對抗寒冬。", mapQuery: "Lou Malnati's Pizzeria Chicago" },
-            { time: "16:30", tag: "高空景觀", tagColor: "bg-blue", must: false, title: "360 CHICAGO 觀景台賞夕陽", desc: "俯瞰密西根湖結冰景致與華燈初上的芝加哥夜景。", mapQuery: "360 CHICAGO" }
-          ]
-        },
-        en: {
-          date: "Feb 8 (Mon)", city: "Chicago", route: "Chicago Architecture & Deep Dish Pizza",
-          items: [
-            { time: "10:30", tag: "City Walk", tagColor: "bg-green", must: false, title: "Chicago Riverwalk & Wrigley Building", desc: "Stroll along the Chicago River and admire historic downtown architecture.", mapQuery: "Chicago Riverwalk" },
-            { time: "13:00", tag: "Local Food", tagColor: "bg-yellow", must: true, title: "Lou Malnati's Deep Dish Pizza", desc: "Enjoy classic Chicago-style deep dish pizza for lunch.", mapQuery: "Lou Malnati's Pizzeria Chicago" },
-            { time: "16:30", tag: "Observation Deck", tagColor: "bg-blue", must: false, title: "360 CHICAGO Observation Deck", desc: "Sunset views over Lake Michigan and the John Hancock Center.", mapQuery: "360 CHICAGO" }
-          ]
-        }
+        zh: { date: "02/09 (二)", city: "芝加哥", route: "千禧公園與潮流逛街", items: [ { time: "10:00", tag: "觀光", tagColor: "bg-blue", must: true, title: "千禧公園看「豆豆」[cite: 1]", desc: "搭乘建築河流巡禮船[cite: 1]。下午去 KITH 等潮流名店逛街，晚餐吃 Al's Beef 牛肉三明治[cite: 1]。", mapQuery: "Millennium Park" } ] },
+        en: { date: "Feb 9 (Tue)", city: "Chicago", route: "Classic Chicago & Streetwear", items: [ { time: "10:00", tag: "Sightseeing", tagColor: "bg-blue", must: true, title: "Millennium Park (The Bean)[cite: 1]", desc: "Chicago Architecture Center River Cruise. Browse streetwear at KITH. Dinner at Al's Beef[cite: 1].", mapQuery: "Millennium Park" } ] }
       },
       {
         day: "D4",
-        zh: {
-          date: "02/09 (二)", city: "路易維爾", route: "取車出發！芝加哥 ➔ 路易維爾 (約 4.5h)",
-          items: [
-            { time: "09:00", tag: "自駕取車", tagColor: "bg-coral", must: true, title: "提取 AWD 四驅休旅車＆檢查裝備", desc: "確認配備四季胎、雪刷與除冰刮刀，設定好 CarPlay 與跨州收費器後沿 I-65 南下。", mapQuery: "Downtown Chicago" },
-            { time: "12:30", tag: "公路中繼", tagColor: "bg-blue", must: false, title: "印第安納波利斯午餐休息", desc: "穿越印第安納州平原，中途停靠休息站喝咖啡伸展筋骨。", mapQuery: "Indianapolis Indiana" },
-            { time: "16:30", tag: "跨州抵達", tagColor: "bg-yellow", must: false, title: "抵達肯塔基州路易維爾 (Louisville)", desc: "參觀路易維爾球棒博物館外觀或河濱區，晚餐品嚐肯塔基州道地南方料理。", mapQuery: "Louisville Slugger Museum & Factory" }
-          ]
-        },
-        en: {
-          date: "Feb 9 (Tue)", city: "Louisville", route: "Pick Up Rental SUV: Chicago ➔ Louisville, KY (4.5h)",
-          items: [
-            { time: "09:00", tag: "Car Rental", tagColor: "bg-coral", must: true, title: "Pick Up AWD Rental SUV & Drive South on I-65", desc: "Pick up rental vehicle in Chicago and begin interstate drive south via I-65.", mapQuery: "Downtown Chicago" },
-            { time: "12:30", tag: "Lunch Stop", tagColor: "bg-blue", must: false, title: "Lunch Break in Indianapolis, IN", desc: "Midday rest and lunch stop in Indianapolis.", mapQuery: "Indianapolis Indiana" },
-            { time: "16:30", tag: "Overnight Stop", tagColor: "bg-yellow", must: false, title: "Arrive in Louisville, Kentucky", desc: "Visit Louisville Slugger Museum area and stay overnight in Louisville.", mapQuery: "Louisville Slugger Museum & Factory" }
-          ]
-        }
+        zh: { date: "02/10 (三)", city: "普渡大學", route: "【一日遊 1】普渡青春回憶線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-yellow", must: true, title: "出發前往西拉法葉[cite: 1]", desc: "校園巡禮（普渡鐘樓、工程噴泉），午餐吃校友必吃的復古漢堡店 Triple XXX Family Restaurant[cite: 1]。下午去 Prophetstown 州立公園走走散步，傍晚開車返回芝加哥市區[cite: 1]。", mapQuery: "Purdue University" } ] },
+        en: { date: "Feb 10 (Wed)", city: "Purdue", route: "Day Trip 1 - Purdue Nostalgia", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-yellow", must: true, title: "Depart for West Lafayette, Indiana[cite: 1]", desc: "Tour Purdue University, lunch at Triple XXX Family Restaurant. Afternoon hike at Prophetstown State Park. Drive back to Chicago[cite: 1].", mapQuery: "Purdue University" } ] }
       },
       {
         day: "D5",
-        zh: {
-          date: "02/10 (三)", city: "納什維爾", route: "路易維爾 ➔ 猛獁洞 ➔ 納什維爾 (約 3h)",
-          items: [
-            { time: "09:30", tag: "自駕 I-65", tagColor: "bg-blue", must: true, title: "猛獁洞國家公園 (Mammoth Cave)", desc: "世界最長已知洞穴系統，冬季洞內恆溫約 12°C 非常舒適，適合參加導覽健行。", mapQuery: "Mammoth Cave National Park" },
-            { time: "15:00", tag: "自駕南下", tagColor: "bg-blue", must: false, title: "進入田納西州音樂之都納什維爾", desc: "氣溫明顯回升！辦理飯店入住後準備探索音樂城。", mapQuery: "Nashville Tennessee" },
-            { time: "18:30", tag: "夜間體驗", tagColor: "bg-coral", must: true, title: "百老匯街 (Broadway) 現場鄉村音樂＆辣雞", desc: "品嚐 Hattie B's Hot Chicken 納什維爾辣炸雞，漫步霓虹閃爍的 Honky Tonk 音樂酒吧街。", mapQuery: "Hattie B's Hot Chicken Nashville" }
-          ]
-        },
-        en: {
-          date: "Feb 10 (Wed)", city: "Nashville", route: "Louisville ➔ Mammoth Cave NP ➔ Nashville, TN (3h)",
-          items: [
-            { time: "09:30", tag: "National Park", tagColor: "bg-blue", must: true, title: "Mammoth Cave National Park Tour", desc: "Guided cave tour at the world's longest known cave system in Kentucky.", mapQuery: "Mammoth Cave National Park" },
-            { time: "15:00", tag: "Drive I-65 S", tagColor: "bg-blue", must: false, title: "Arrive in Nashville, Tennessee", desc: "Check into Nashville hotel and relax.", mapQuery: "Nashville Tennessee" },
-            { time: "18:30", tag: "Live Music & Food", tagColor: "bg-coral", must: true, title: "Broadway Honky Tonk & Hattie B's Hot Chicken", desc: "Try famous Nashville Hot Chicken and enjoy live country music on Broadway.", mapQuery: "Hattie B's Hot Chicken Nashville" }
-          ]
-        }
+        zh: { date: "02/11 (四)", city: "芝加哥", route: "休息與在地美食", items: [ { time: "12:00", tag: "休息", tagColor: "bg-green", must: false, title: "留在芝加哥市區放鬆[cite: 1]", desc: "昨天開車較累，今天去 West Loop 區尋覓美食，吃吃看著名的 Portillo's 芝加哥熱狗[cite: 1]。", mapQuery: "Portillo's Hot Dogs" } ] },
+        en: { date: "Feb 11 (Thu)", city: "Chicago", route: "Rest & Local Eats", items: [ { time: "12:00", tag: "Rest", tagColor: "bg-green", must: false, title: "Stay in Chicago[cite: 1]", desc: "Rest up from yesterday's drive. Grab some famous Chicago-style hot dogs at Portillo's and explore the West Loop food scene[cite: 1].", mapQuery: "Portillo's Hot Dogs" } ] }
       },
       {
         day: "D6",
-        zh: {
-          date: "02/11 (四)", city: "納什維爾", route: "納什維爾音樂文化慢遊",
-          items: [
-            { time: "10:00", tag: "文化必訪", tagColor: "bg-yellow", must: true, title: "鄉村音樂名人堂與博物館", desc: "建築外觀宛如巨大鋼琴鍵盤，館藏豐富見證美國音樂史。", mapQuery: "Country Music Hall of Fame and Museum" },
-            { time: "13:30", tag: "美食市集", tagColor: "bg-green", must: false, title: "Assembly Food Hall 午餐", desc: "匯集納什維爾在地人氣美食與甜點，頂樓還有戶外舞台。", mapQuery: "Assembly Food Hall Nashville" },
-            { time: "16:00", tag: "換季打包", tagColor: "bg-coral", must: false, title: "12 South 街區散步＋收起極寒冬衣", desc: "逛逛充滿壁畫與精品咖啡的 12 South 街區；今晚把芝加哥厚重羽絨衣收進真空袋放車底。", mapQuery: "12 South Nashville" }
-          ]
-        },
-        en: {
-          date: "Feb 11 (Thu)", city: "Nashville", route: "Nashville Music City Sightseeing",
-          items: [
-            { time: "10:00", tag: "Museum", tagColor: "bg-yellow", must: true, title: "Country Music Hall of Fame and Museum", desc: "Explore the history of American country music in downtown Nashville.", mapQuery: "Country Music Hall of Fame and Museum" },
-            { time: "13:30", tag: "Lunch", tagColor: "bg-green", must: false, title: "Fifth + Broadway / Assembly Food Hall", desc: "Lunch and local treats at downtown food hall.", mapQuery: "Assembly Food Hall Nashville" },
-            { time: "16:00", tag: "Neighborhood", tagColor: "bg-coral", must: false, title: "12 South Neighborhood Walk & Cafes", desc: "Stroll along 12 South for murals, boutiques, and coffee shops.", mapQuery: "12 South Nashville" }
-          ]
-        }
+        zh: { date: "02/12 (五)", city: "印第安納", route: "【一日遊 2】國家公園與免稅蘋果線", items: [ { time: "09:00", tag: "自駕", tagColor: "bg-blue", must: true, title: "前往印第安納沙丘國家公園[cite: 1]", desc: "欣賞絕美的密西根湖畔與沙丘景觀[cite: 1]。下午抵達 University Park Mall 的 Apple Store 買 M4 MacBook Air，享受印第安納州 7% 的低稅率[cite: 1]。傍晚開車約 1.5 小時返回芝加哥[cite: 1]。", mapQuery: "Indiana Dunes National Park" } ] },
+        en: { date: "Feb 12 (Fri)", city: "Indiana", route: "Day Trip 2 - Indiana Dunes & Apple Store Run", items: [ { time: "09:00", tag: "Drive", tagColor: "bg-blue", must: true, title: "Drive to Indiana Dunes National Park[cite: 1]", desc: "Enjoy views along Lake Michigan. Drive to University Park Mall to pick up M4 MacBook Air at 7% sales tax. Drive back to Chicago[cite: 1].", mapQuery: "Indiana Dunes National Park" } ] }
       },
       {
         day: "D7",
-        zh: {
-          date: "02/12 (五)", city: "亞特蘭大", route: "納什維爾 ➔ 查塔努加 ➔ 亞特蘭大 (約 4h)",
-          items: [
-            { time: "09:30", tag: "自駕 I-24", tagColor: "bg-blue", must: false, title: "查塔努加瞭望山 (Lookout Mountain)", desc: "中途停靠田納西與喬治亞交界，天氣好時可一覽七州風景與紅寶石瀑布。", mapQuery: "Lookout Mountain Chattanooga" },
-            { time: "15:30", tag: "自駕 I-75", tagColor: "bg-blue", must: false, title: "抵達喬治亞州首府亞特蘭大", desc: "注意避開週五下午 4–6 點亞特蘭大市中心下班尖峰車潮。", mapQuery: "Midtown Atlanta" },
-            { time: "18:00", tag: "市場美食", tagColor: "bg-yellow", must: true, title: "Ponce City Market 工業風市集晚餐", desc: "由歷史悠久的 Sears 大樓改建，集合眾多質感餐廳與選物店。", mapQuery: "Ponce City Market Atlanta" }
-          ]
-        },
-        en: {
-          date: "Feb 12 (Fri)", city: "Atlanta", route: "Nashville ➔ Chattanooga ➔ Atlanta, GA (4h)",
-          items: [
-            { time: "09:30", tag: "Scenic Stop", tagColor: "bg-blue", must: false, title: "Lookout Mountain, Chattanooga", desc: "Scenic stop along I-24 at the Tennessee-Georgia border.", mapQuery: "Lookout Mountain Chattanooga" },
-            { time: "15:30", tag: "Drive I-75 S", tagColor: "bg-blue", must: false, title: "Arrive in Atlanta, Georgia", desc: "Check into Atlanta hotel.", mapQuery: "Midtown Atlanta" },
-            { time: "18:00", tag: "Dinner", tagColor: "bg-yellow", must: true, title: "Ponce City Market & BeltLine", desc: "Dinner and evening walk at the historic Ponce City Market.", mapQuery: "Ponce City Market Atlanta" }
-          ]
-        }
+        zh: { date: "02/13 (六)", city: "芝加哥", route: "博物館與頂級牛排", items: [ { time: "10:00", tag: "藝文", tagColor: "bg-yellow", must: false, title: "參觀菲爾德自然史博物館[cite: 1]", desc: "晚上吃頂級牛排（Bavette's Bar & Boeuf）[cite: 1]。", mapQuery: "The Field Museum" } ] },
+        en: { date: "Feb 13 (Sat)", city: "Chicago", route: "Museum Campus", items: [ { time: "10:00", tag: "Culture", tagColor: "bg-yellow", must: false, title: "Visit The Field Museum[cite: 1]", desc: "Dinner at a high-end steakhouse (Bavette's Bar & Boeuf)[cite: 1].", mapQuery: "The Field Museum" } ] }
       },
       {
         day: "D8",
-        zh: {
-          date: "02/13 (六)", city: "亞特蘭大", route: "百年奧運公園兩大經典地標",
-          items: [
-            { time: "09:30", tag: "海洋奇觀", tagColor: "bg-blue", must: true, title: "喬治亞水族館 (Georgia Aquarium)", desc: "全美最大水族館之一，必看巨型鯨鯊、鬼蝠魟與海底隧道。", mapQuery: "Georgia Aquarium" },
-            { time: "13:30", tag: "品牌體驗", tagColor: "bg-coral", must: true, title: "可口可樂世界 (World of Coca-Cola)", desc: "就在水族館正對面！參觀神秘配方金庫，並在二樓一次試喝全球上百種可樂公司飲品。", mapQuery: "World of Coca-Cola" },
-            { time: "17:00", tag: "稅率優勢", tagColor: "bg-green", must: false, title: "Buckhead 購物區或周邊血拼", desc: "喬治亞州消費稅比芝加哥低不少，適合順道採買服飾配件。", mapQuery: "Lenox Square Atlanta" }
-          ]
-        },
-        en: {
-          date: "Feb 13 (Sat)", city: "Atlanta", route: "Centennial Olympic Park Attractions",
-          items: [
-            { time: "09:30", tag: "Aquarium", tagColor: "bg-blue", must: true, title: "Georgia Aquarium", desc: "Visit one of the largest aquariums in the world to see whale sharks and manta rays.", mapQuery: "Georgia Aquarium" },
-            { time: "13:30", tag: "Museum", tagColor: "bg-coral", must: true, title: "World of Coca-Cola", desc: "Explore the history of Coca-Cola and sample international beverages.", mapQuery: "World of Coca-Cola" },
-            { time: "17:00", tag: "Shopping", tagColor: "bg-green", must: false, title: "Buckhead / Lenox Square", desc: "Evening shopping and dinner in Buckhead.", mapQuery: "Lenox Square Atlanta" }
-          ]
-        }
+        zh: { date: "02/14 (日)", city: "芝加哥", route: "文青區探險", items: [ { time: "11:00", tag: "逛街", tagColor: "bg-green", must: false, title: "去 Wicker Park 區逛古著店[cite: 1]", desc: "喝在地咖啡（Stan's Donuts）[cite: 1]。", mapQuery: "Wicker Park" } ] },
+        en: { date: "Feb 14 (Sun)", city: "Chicago", route: "Wicker Park", items: [ { time: "11:00", tag: "Shopping", tagColor: "bg-green", must: false, title: "Explore Wicker Park[cite: 1]", desc: "Shop for vintage clothes and get local coffee (Stan's Donuts)[cite: 1].", mapQuery: "Wicker Park" } ] }
       },
       {
         day: "D9",
-        zh: {
-          date: "02/14 (日)", city: "薩凡納", route: "亞特蘭大 ➔ 薩凡納情人節古城漫步 (約 4h)",
-          items: [
-            { time: "09:30", tag: "自駕 I-16", tagColor: "bg-blue", must: false, title: "往大西洋海岸歷史名城薩凡納出發", desc: "沿途景觀逐漸轉為披掛西班牙苔蘚（Spanish Moss）的百年橡樹林。", mapQuery: "Savannah Historic District" },
-            { time: "14:30", tag: "電影場景", tagColor: "bg-green", must: true, title: "Chippewa Square (阿甘正傳公園) & 佛森公園", desc: "漫步全美最美規劃古城之一，欣賞噴泉與綠意盎然的百年廣場。", mapQuery: "Forsyth Park Savannah" },
-            { time: "18:30", tag: "情人節大餐", tagColor: "bg-coral", must: true, title: "薩凡納河濱街區南方海陸浪漫晚餐", desc: "2/14 情人節之夜，在古色古香的南方老宅餐廳或 River Street 享用鮮蝦玉米粥等名菜。", mapQuery: "Savannah River Street" }
-          ]
-        },
-        en: {
-          date: "Feb 14 (Sun)", city: "Savannah", route: "Atlanta ➔ Historic Savannah, GA (4h)",
-          items: [
-            { time: "09:30", tag: "Drive I-16 E", tagColor: "bg-blue", must: false, title: "Drive to Savannah Historic District", desc: "Scenic drive to Georgia's historic coastal city.", mapQuery: "Savannah Historic District" },
-            { time: "14:30", tag: "Historic Walk", tagColor: "bg-green", must: true, title: "Forsyth Park & Chippewa Square", desc: "Walk through oak-lined historic squares and Forsyth Park fountain.", mapQuery: "Forsyth Park Savannah" },
-            { time: "18:30", tag: "Valentine's Dinner", tagColor: "bg-coral", must: true, title: "Savannah River Street Southern Dinner", desc: "Valentine's Day dinner along historic River Street.", mapQuery: "Savannah River Street" }
-          ]
-        }
+        zh: { date: "02/15 (一)", city: "芝加哥", route: "【任務】幼犬物資大採購", items: [ { time: "14:00", tag: "採購", tagColor: "bg-coral", must: true, title: "開車去大型寵物店 (PetSmart/Petco)[cite: 1]", desc: "買齊尿布墊、小睡床、玩具[cite: 1]。去 Target 買「Welcome Home」的派對掛布和氣球[cite: 1]。", mapQuery: "PetSmart" } ] },
+        en: { date: "Feb 15 (Mon)", city: "Chicago", route: "Operation Frenchie Supply Run", items: [ { time: "14:00", tag: "Shopping", tagColor: "bg-coral", must: true, title: "Hit up PetSmart/Petco[cite: 1]", desc: "Buy pee pads, dog bed, chew toys. Stop by Target for Welcome Home party banners[cite: 1].", mapQuery: "PetSmart" } ] }
       },
       {
         day: "D10",
-        zh: {
-          date: "02/15 (一)", city: "聖奧古斯丁", route: "薩凡納 ➔ 聖奧古斯丁 ➔ 奧蘭多 (總統日避開樂園)",
-          items: [
-            { time: "09:00", tag: "聰明錯峰", tagColor: "bg-yellow", must: true, title: "美國總統日國定假日：安排海岸公路巡禮", desc: "今天是美國三連休最後一天，主題樂園人潮爆滿，剛好安排沿 I-95 海岸南下進佛州！", mapQuery: "St. Augustine Florida" },
-            { time: "11:30", tag: "全美最古老城", tagColor: "bg-coral", must: true, title: "聖奧古斯丁歷史街區 & 聖馬可斯堡", desc: "充滿西班牙殖民風情的陽光古城，逛逛 St. George 步行街與 フラッグラー學院。", mapQuery: "Castillo de San Marcos National Monument" },
-            { time: "17:30", tag: "抵達終點站", tagColor: "bg-green", must: false, title: "抵達奧蘭多飯店 Check-in", desc: "正式進入佛羅里達暖冬陽光模式！晚餐後早點休息迎接明天樂園日。", mapQuery: "Orlando Florida" }
-          ]
-        },
-        en: {
-          date: "Feb 15 (Mon)", city: "St. Augustine", route: "Savannah ➔ St. Augustine ➔ Orlando, FL",
-          items: [
-            { time: "09:00", tag: "Drive I-95 S", tagColor: "bg-yellow", must: true, title: "Coastal Drive into Florida", desc: "Drive south along the Atlantic coast into Florida.", mapQuery: "St. Augustine Florida" },
-            { time: "11:30", tag: "Historic Town", tagColor: "bg-coral", must: true, title: "St. Augustine & Castillo de San Marcos", desc: "Explore the nation's oldest city, St. George Street, and Flagler College.", mapQuery: "Castillo de San Marcos National Monument" },
-            { time: "17:30", tag: "Hotel Check-in", tagColor: "bg-green", must: false, title: "Arrive in Orlando, Florida (4 Nights)", desc: "Check into Orlando resort hotel.", mapQuery: "Orlando Florida" }
-          ]
-        }
+        zh: { date: "02/16 (二)", city: "芝加哥", route: "【任務】居家防護與派對佈置", items: [ { time: "13:00", tag: "準備", tagColor: "bg-blue", must: false, title: "幫朋友把公寓做防狗測試[cite: 1]", desc: "收好電線、架設圍欄，佈置客廳[cite: 1]。買幾桶芝加哥特產 Garrett 爆米花當明天派對的點心[cite: 1]。", mapQuery: "Garrett Popcorn Shops" } ] },
+        en: { date: "Feb 16 (Tue)", city: "Chicago", route: "Puppy-Proofing the Apartment", items: [ { time: "13:00", tag: "Prep", tagColor: "bg-blue", must: false, title: "Secure the apartment[cite: 1]", desc: "Hide cables, set up playpen, decorate the living room. Buy Garrett Popcorn for human snacks[cite: 1].", mapQuery: "Garrett Popcorn Shops" } ] }
       },
       {
         day: "D11",
-        zh: {
-          date: "02/16 (二)", city: "奧蘭多", route: "奧蘭多主題樂園 Day 1（平日順暢玩）",
-          items: [
-            { time: "08:30", tag: "樂園專車/自駕", tagColor: "bg-coral", must: true, title: "迪士尼世界 或 環球影城 Epic Universe", desc: "避開總統日連假後的週二平日，排隊時間大幅縮短！提早入園先攻熱門設施。", mapQuery: "Walt Disney World Resort Orlando" },
-            { time: "13:00", tag: "園區午餐", tagColor: "bg-yellow", must: false, title: "園區主題餐廳與小憩", desc: "利用官方 App 預訂行動點餐（Mobile Order），省去排隊買午餐時間。", mapQuery: "Disney Springs Orlando" },
-            { time: "20:30", tag: "夜間煙火", tagColor: "bg-blue", must: true, title: "夜間燈光煙火大秀", desc: "欣賞震撼的城堡投影與煙火秀，為樂園首日畫下完美句點。", mapQuery: "Magic Kingdom Orlando" }
-          ]
-        },
-        en: {
-          date: "Feb 16 (Tue)", city: "Orlando", route: "Orlando Theme Park Day 1",
-          items: [
-            { time: "08:30", tag: "Theme Park", tagColor: "bg-coral", must: true, title: "Walt Disney World or Universal Epic Universe", desc: "Full day enjoying Orlando's world-famous theme parks.", mapQuery: "Walt Disney World Resort Orlando" },
-            { time: "13:00", tag: "In-Park Lunch", tagColor: "bg-yellow", must: false, title: "Theme Park Dining & Shows", desc: "Lunch and afternoon attractions inside the park.", mapQuery: "Disney Springs Orlando" },
-            { time: "20:30", tag: "Night Show", tagColor: "bg-blue", must: true, title: "Nighttime Fireworks Spectacular", desc: "Evening castle projection and fireworks show.", mapQuery: "Magic Kingdom Orlando" }
-          ]
-        }
+        zh: { date: "02/17 (三)", city: "芝加哥", route: "重頭戲！小法鬥回家", items: [ { time: "10:00", tag: "重頭戲", tagColor: "bg-yellow", must: true, title: "迎接小法鬥！[cite: 1]", desc: "在公寓舉辦溫馨迎新派對，幫這呆萌小狗拍爆照片和短影音[cite: 1]。", mapQuery: "Magnificent Mile" } ] },
+        en: { date: "Feb 17 (Wed)", city: "Chicago", route: "THE BIG DAY (Puppy Arrives!)", items: [ { time: "10:00", tag: "Event", tagColor: "bg-yellow", must: true, title: "Pick up the French Bulldog![cite: 1]", desc: "Host a welcome party at the apartment. Take lots of photos and videos[cite: 1].", mapQuery: "Magnificent Mile" } ] }
       },
       {
         day: "D12",
-        zh: {
-          date: "02/17 (三)", city: "奧蘭多", route: "藍泉州立公園野生海牛 ＆ Outlet 低稅率採購",
-          items: [
-            { time: "08:30", tag: "自駕 45m", tagColor: "bg-blue", must: true, title: "Blue Spring State Park 看野生海牛", desc: "2 月冬季是佛州看野生海牛（Manatee）的最佳季節！數百隻海牛會聚集在 22°C 恆溫清澈湧泉避寒。", mapQuery: "Blue Spring State Park Orange City" },
-            { time: "13:30", tag: "低稅血拼", tagColor: "bg-coral", must: true, title: "Orlando Vineland Premium Outlets", desc: "佛州奧蘭多消費稅僅約 6.5%（比芝加哥省近 4%），所有高單價戰利品集中在此入手最划算！", mapQuery: "Orlando Vineland Premium Outlets" },
-            { time: "19:00", tag: "晚餐放鬆", tagColor: "bg-green", must: false, title: "Disney Springs 或 I-Drive 美式牛排海鮮", desc: "逛街後享用豐盛晚餐，回飯店泡澡休息。", mapQuery: "International Drive Orlando" }
-          ]
-        },
-        en: {
-          date: "Feb 17 (Wed)", city: "Orlando", route: "Wild Manatees at Blue Spring & Outlet Shopping",
-          items: [
-            { time: "08:30", tag: "State Park", tagColor: "bg-blue", must: true, title: "Blue Spring State Park (Manatee Viewing)", desc: "Watch wild West Indian manatees gathering in the warm 72°F crystal-clear spring waters.", mapQuery: "Blue Spring State Park Orange City" },
-            { time: "13:30", tag: "Shopping", tagColor: "bg-coral", must: true, title: "Orlando Vineland Premium Outlets", desc: "Afternoon shopping for gifts and souvenirs.", mapQuery: "Orlando Vineland Premium Outlets" },
-            { time: "19:00", tag: "Dinner", tagColor: "bg-green", must: false, title: "Dinner at Disney Springs / International Drive", desc: "Relaxing dinner and evening stroll.", mapQuery: "International Drive Orlando" }
-          ]
-        }
+        zh: { date: "02/18 (四)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 18 (Thu)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
       },
       {
         day: "D13",
-        zh: {
-          date: "02/18 (四)", city: "奧蘭多", route: "奧蘭多主題樂園 Day 2",
-          items: [
-            { time: "08:30", tag: "樂園全日", tagColor: "bg-coral", must: true, title: "環球影城哈利波特園區 / 迪士尼 Epcot", desc: "全日暢遊第二座主力園區，體驗哈利波特禁忌之旅、海格摩托車或 Epcot 世界櫥窗。", mapQuery: "Universal Orlando Resort" },
-            { time: "14:00", tag: "必喝飲品", tagColor: "bg-yellow", must: false, title: "奶油啤酒 (Butterbeer) 下午茶", desc: "在活米村或斜角巷來杯冰沙版奶油啤酒。", mapQuery: "Universal CityWalk Orlando" },
-            { time: "19:30", tag: "CityWalk", tagColor: "bg-blue", must: false, title: "Universal CityWalk 晚餐與伴手禮採買", desc: "挑選紀念品，準備打包裝箱。", mapQuery: "Universal CityWalk Orlando" }
-          ]
-        },
-        en: {
-          date: "Feb 18 (Thu)", city: "Orlando", route: "Orlando Theme Park Day 2",
-          items: [
-            { time: "08:30", tag: "Theme Park", tagColor: "bg-coral", must: true, title: "Universal Orlando Resort (Wizarding World) / EPCOT", desc: "Full day exploring Harry Potter attractions or Disney's EPCOT.", mapQuery: "Universal Orlando Resort" },
-            { time: "14:00", tag: "Afternoon", tagColor: "bg-yellow", must: false, title: "Frozen Butterbeer in Diagon Alley / Hogsmeade", desc: "Afternoon break inside the theme park.", mapQuery: "Universal CityWalk Orlando" },
-            { time: "19:30", tag: "Dinner", tagColor: "bg-blue", must: false, title: "Universal CityWalk Dinner", desc: "Dinner and souvenir shopping at CityWalk.", mapQuery: "Universal CityWalk Orlando" }
-          ]
-        }
+        zh: { date: "02/19 (五)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 19 (Fri)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
       },
       {
         day: "D14",
-        zh: {
-          date: "02/19 (五)", city: "奧蘭多", route: "甘迺迪太空中心 或 溫特帕克質感小鎮",
-          items: [
-            { time: "09:30", tag: "自駕出遊", tagColor: "bg-blue", must: true, title: "甘迺迪太空中心 (KSC) 或 Winter Park 遊船", desc: "可選震撼的亞特蘭提斯號太空梭真跡展館；若想輕鬆漫遊則去奧蘭多北郊小歐洲 Winter Park 搭景觀運河船。", mapQuery: "Kennedy Space Center Visitor Complex" },
-            { time: "16:30", tag: "行李整理", tagColor: "bg-yellow", must: false, title: "戰利品裝箱＆清理車廂", desc: "將四驅車內的隨身物品與電子收費器整理妥當，準備明日機場還車。", mapQuery: "Winter Park Florida" }
-          ]
-        },
-        en: {
-          date: "Feb 19 (Fri)", city: "Orlando", route: "Kennedy Space Center or Winter Park Boat Tour",
-          items: [
-            { time: "09:30", tag: "Day Trip", tagColor: "bg-blue", must: true, title: "Kennedy Space Center Visitor Complex", desc: "See Space Shuttle Atlantis and NASA launch complex, or take a scenic boat tour in Winter Park.", mapQuery: "Kennedy Space Center Visitor Complex" },
-            { time: "16:30", tag: "Packing", tagColor: "bg-yellow", must: false, title: "Pack Luggage & Prepare for Return Flight", desc: "Organize luggage and prepare rental car for tomorrow's airport drop-off.", mapQuery: "Winter Park Florida" }
-          ]
-        }
+        zh: { date: "02/20 (六)", city: "芝加哥", route: "居家育犬時光", items: [ { time: "12:00", tag: "放鬆", tagColor: "bg-green", must: false, title: "陪朋友一起體驗新手狗爸的生活[cite: 1]", desc: "在室內跟狗狗玩，點外送回公寓吃，享受愜意週末[cite: 1]。", mapQuery: "Chicago" } ] },
+        en: { date: "Feb 20 (Sat)", city: "Chicago", route: "Puppy Duty & Chills", items: [ { time: "12:00", tag: "Relax", tagColor: "bg-green", must: false, title: "Bond with the puppy[cite: 1]", desc: "Help your friend learn the ropes of being a new dog dad. Order takeout and relax[cite: 1].", mapQuery: "Chicago" } ] }
       },
       {
         day: "D15",
-        zh: {
-          date: "02/20 (六)", city: "奧蘭多➔芝加哥", route: "奧蘭多異地還車 ➔ 搭機返回芝加哥 ➔ 深夜登機",
-          items: [
-            { time: "09:00", tag: "機場還車", tagColor: "bg-coral", must: true, title: "奧蘭多機場 (MCO) 加滿油還車", desc: "完成跨州公路壯遊！記得拔下個人 SunPass Pro 並拍下還車里程與油表照片留存。", mapQuery: "Orlando International Airport" },
-            { time: "11:30", tag: "國內線北返", tagColor: "bg-blue", must: true, title: "搭乘國內線航班 MCO ➔ ORD", desc: "3 小時直飛回到芝加哥，省去 1,800 公里長途北返疲勞。", mapQuery: "O'Hare International Airport" },
-            { time: "21:00", tag: "貴賓室休息", tagColor: "bg-yellow", must: true, title: "ORD T5 報到＆貴賓室洗漱用餐", desc: "辦理長榮 BR55 皇璽桂冠艙報到，進入貴賓室休息等候 00:20 凌晨班機。", mapQuery: "O'Hare International Airport Terminal 5" }
-          ]
-        },
-        en: {
-          date: "Feb 20 (Sat)", city: "MCO ➔ ORD", route: "Return Car at MCO ➔ Fly to Chicago ORD",
-          items: [
-            { time: "09:00", tag: "Car Drop-off", tagColor: "bg-coral", must: true, title: "Return Rental SUV at Orlando Airport (MCO)", desc: "Complete one-way road trip rental drop-off at MCO airport.", mapQuery: "Orlando International Airport" },
-            { time: "11:30", tag: "Domestic Flight", tagColor: "bg-blue", must: true, title: "Fly Orlando (MCO) to Chicago O'Hare (ORD)", desc: "Direct domestic flight back to Chicago O'Hare to connect with international departure.", mapQuery: "O'Hare International Airport" },
-            { time: "21:00", tag: "Check-in & Lounge", tagColor: "bg-yellow", must: true, title: "Check-in at ORD Terminal 5 for EVA Air BR55", desc: "Check bags and relax at the business class lounge before midnight boarding.", mapQuery: "O'Hare International Airport Terminal 5" }
-          ]
-        }
+        zh: { date: "02/21 (日)", city: "芝加哥", route: "最後採購與準備登機", items: [ { time: "15:00", tag: "採購", tagColor: "bg-coral", must: false, title: "去 Trader Joe's 買特色零食回台灣當伴手禮[cite: 1]", desc: "完成行李打包，深夜前往 ORD 機場[cite: 1]。", mapQuery: "Trader Joe's" } ] },
+        en: { date: "Feb 21 (Sun)", city: "Chicago", route: "Final Packing & Departure", items: [ { time: "15:00", tag: "Shopping", tagColor: "bg-coral", must: false, title: "Last-minute souvenir shopping at Trader Joe's[cite: 1]", desc: "Final packing. Head to ORD airport late at night[cite: 1].", mapQuery: "Trader Joe's" } ] }
       },
       {
         day: "D16",
-        zh: {
-          date: "02/21 (日)", city: "返抵台灣", route: "芝加哥 ORD (00:20) ➔ 桃園 TPE (+1日 06:25)",
-          items: [
-            { time: "00:20", tag: "長榮 BR55", tagColor: "bg-coral", must: true, title: "皇璽桂冠艙 6A 平躺返台", desc: "享用機上宵夜與早餐，伴隨滿滿回憶舒適睡回台灣（於 02/22 清晨 06:25 抵達桃園）。", mapQuery: "Taoyuan International Airport" }
-          ]
-        },
-        en: {
-          date: "Feb 21 (Sun)", city: "Fly Home", route: "Chicago ORD (00:20) ➔ Taipei TPE (+1 Day 06:25)",
-          items: [
-            { time: "00:20", tag: "EVA Air BR55", tagColor: "bg-coral", must: true, title: "Depart Chicago (ORD) for Taipei (TPE)", desc: "Direct flight home to Taiwan (Royal Laurel Class Seat 6A), arriving Feb 22 at 06:25 AM.", mapQuery: "Taoyuan International Airport" }
-          ]
-        }
+        zh: { date: "02/22 (一)", city: "返程", route: "滿載而歸", items: [ { time: "00:30", tag: "航班起飛", tagColor: "bg-blue", must: true, title: "凌晨 00:30 搭乘 BR55 班機起飛回台[cite: 1]", desc: "結束充滿回憶的旅程。", mapQuery: "Taoyuan International Airport" } ] },
+        en: { date: "Feb 22 (Mon)", city: "Flight Home", route: "Flight Home", items: [ { time: "00:30", tag: "Departure", tagColor: "bg-blue", must: true, title: "Depart ORD at 00:30 via BR55[cite: 1]", desc: "Have a safe flight home.", mapQuery: "Taoyuan International Airport" } ] }
       }
     ];
 
     const tabsContainer = document.getElementById('day-tabs');
     const contentContainer = document.getElementById('day-content');
 
-    // 1. 出發倒數計時 (支援雙語)
     function updateCountdown() {
-      const target = new Date('2027-02-06T00:00:00+08:00');
+      const target = new Date('2027-02-07T00:00:00+08:00');
       const now = new Date();
       const diffTime = target - now;
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       const box = document.getElementById('countdown-box');
-
       if (diffDays > 0) {
-        box.innerHTML = currentLang === 'zh'
-          ? `出發倒數 <span>${diffDays}</span> 天`
-          : `<span>${diffDays}</span> Days Until Departure`;
+        box.innerHTML = currentLang === 'zh' ? `出發倒數 <span>${diffDays}</span> 天` : `<span>${diffDays}</span> Days Until Departure`;
       } else if (diffDays === 0) {
         box.innerHTML = currentLang === 'zh' ? '🎉 今天出發！祝旅途愉快' : '🎉 Departure Day! Safe Travels';
       } else {
-        box.innerHTML = currentLang === 'zh' ? '🚗 旅途進行中／已圓滿完成' : '🚗 Road Trip in Progress / Completed';
+        box.innerHTML = currentLang === 'zh' ? '🚗 旅途進行中／已圓滿完成' : '🚗 Trip in Progress / Completed';
       }
     }
 
-    // 2. 渲染日期標籤與單日行程內容
     function renderTabs() {
       tabsContainer.innerHTML = '';
       itineraryData.forEach((d, idx) => {
@@ -1334,10 +434,7 @@
         const btn = document.createElement('button');
         btn.className = 'day-tab' + (idx === currentDayIndex ? ' active' : '');
         btn.innerHTML = `<span class="d-num">${d.day}</span><span class="d-city">${langData.city}</span>`;
-        btn.addEventListener('click', () => {
-          currentDayIndex = idx;
-          renderDay(idx);
-        });
+        btn.addEventListener('click', () => { currentDayIndex = idx; renderDay(idx); });
         tabsContainer.appendChild(btn);
       });
     }
@@ -1346,10 +443,7 @@
       const d = itineraryData[index];
       const data = d[currentLang];
       const dict = i18nDict[currentLang];
-
-      document.querySelectorAll('.day-tab').forEach((btn, idx) => {
-        btn.classList.toggle('active', idx === index);
-      });
+      document.querySelectorAll('.day-tab').forEach((btn, idx) => { btn.classList.toggle('active', idx === index); });
 
       const itemsHtml = data.items.map(item => {
         const cleanMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.mapQuery)}`;
@@ -1364,41 +458,27 @@
             </div>
             <div class="tl-title">${item.title}</div>
             <p class="tl-desc">${item.desc}</p>
-            <a class="map-btn" href="${cleanMapUrl}" target="_blank" rel="noopener noreferrer">
-              ${dict.mapBtnText}
-            </a>
-          </div>
-        `;
+            <a class="map-btn" href="${cleanMapUrl}" target="_blank" rel="noopener noreferrer">${dict.mapBtnText}</a>
+          </div>`;
       }).join('');
 
       contentContainer.innerHTML = `
         <div class="bounce-enter">
-          <div class="day-summary-banner">
-            <span>📅 ${d.day} · ${data.date}</span>
-            <span>${data.route}</span>
-          </div>
-          <div class="timeline-list">
-            ${itemsHtml}
-          </div>
-        </div>
-      `;
+          <div class="day-summary-banner"><span>📅 ${d.day} · ${data.date}</span><span>${data.route}</span></div>
+          <div class="timeline-list">${itemsHtml}</div>
+        </div>`;
     }
 
-    // 3. 一鍵切換中英文邏輯
     function applyLanguage(lang) {
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-Hant' : 'en';
       const dict = i18nDict[lang];
 
-      // 更新所有帶有 data-i18n 的靜態元素
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) {
-          el.textContent = dict[key];
-        }
+        if (dict[key]) el.innerHTML = dict[key];
       });
 
-      // 更新左上角按鈕外觀與 CBP 海關摘要卡
       const langBtn = document.getElementById('lang-btn');
       const langBtnText = document.getElementById('lang-btn-text');
       const cbpCard = document.getElementById('cbp-summary');
@@ -1412,30 +492,20 @@
         langBtnText.textContent = 'EN (CBP)';
         cbpCard.classList.remove('show');
       }
-
       updateCountdown();
       renderTabs();
       renderDay(currentDayIndex);
     }
 
-    document.getElementById('lang-btn').addEventListener('click', () => {
-      applyLanguage(currentLang === 'zh' ? 'en' : 'zh');
-    });
-
-    // 初始化畫面
+    document.getElementById('lang-btn').addEventListener('click', () => applyLanguage(currentLang === 'zh' ? 'en' : 'zh'));
     applyLanguage('zh');
 
-    // 4. 待辦清單 LocalStorage 保存功能
     const STORAGE_KEY = 'usa_roadtrip_2027_todos';
     const savedTodos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
     const checkboxes = document.querySelectorAll('.todo-item input[type="checkbox"]');
-
     checkboxes.forEach(cb => {
       const id = cb.dataset.id;
-      if (savedTodos[id]) {
-        cb.checked = true;
-        cb.closest('.todo-item').classList.add('checked');
-      }
+      if (savedTodos[id]) { cb.checked = true; cb.closest('.todo-item').classList.add('checked'); }
       cb.addEventListener('change', () => {
         savedTodos[id] = cb.checked;
         cb.closest('.todo-item').classList.toggle('checked', cb.checked);
@@ -1445,30 +515,19 @@
 
     document.getElementById('reset-todo').addEventListener('click', () => {
       localStorage.removeItem(STORAGE_KEY);
-      checkboxes.forEach(cb => {
-        cb.checked = false;
-        cb.closest('.todo-item').classList.remove('checked');
-      });
+      checkboxes.forEach(cb => { cb.checked = false; cb.closest('.todo-item').classList.remove('checked'); });
     });
 
-    // 5. 滾動選單高亮 (requestAnimationFrame 節流)
     const sections = ['flights', 'itinerary', 'hotels', 'prep'].map(id => document.getElementById(id));
     const navLinks = document.querySelectorAll('.nav-link');
     let isTicking = false;
-
     window.addEventListener('scroll', () => {
       if (!isTicking) {
         window.requestAnimationFrame(() => {
           const scrollPos = window.scrollY + 120;
           let currentId = 'flights';
-          for (const sec of sections) {
-            if (sec && sec.offsetTop <= scrollPos) {
-              currentId = sec.id;
-            }
-          }
-          navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
-          });
+          for (const sec of sections) if (sec && sec.offsetTop <= scrollPos) currentId = sec.id;
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`));
           isTicking = false;
         });
         isTicking = true;
